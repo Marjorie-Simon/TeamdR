@@ -119,8 +119,6 @@ GEM
     nokogiri (1.11.1)
       mini_portile2 (~> 2.5.0)
       racc (~> 1.4)
-    nokogiri (1.11.1-x86_64-darwin)
-      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pry (0.13.1)
@@ -233,10 +231,14 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
+<<<<<<< HEAD
   -darwin-20
   ruby
   x86_64-darwin-19
   x86_64-darwin-20
+=======
+  ruby
+>>>>>>> 4e28ea1c74040d9d214e566ee10ca9cff4c3ca69
 
 DEPENDENCIES
   autoprefixer-rails
@@ -268,4 +270,4 @@ RUBY VERSION
    ruby 2.6.6p146
 
 BUNDLED WITH
-   2.2.4
+   2.1.2
