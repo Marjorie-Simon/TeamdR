@@ -1,7 +1,6 @@
 .menu {
-  background-color: #ee964b;
+  background-color: $brown;
   color: white;
-  align-items: left;
   margin: 8px;
   padding: 20px 2px;
   width: 200px;
@@ -19,5 +18,5 @@
 
 .menu-item:hover {
   text-decoration: none;
-  color: #d90368;
+  color: $pink;
 }
