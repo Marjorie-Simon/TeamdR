@@ -1,12 +1,18 @@
-.navbar-lewagon {
+.navbar-teamdr {
   justify-content: space-between;
-  background: white;
+  background: $logo-blue;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-teamdr .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-teamdr .navbar-brand img {
   width: 40px;
+  height: 40px;
+}
+
+.dropdown-menu {
+  box-shadow: 0 0 50px -15px $gray;
+  border-radius: 10px;
 }
