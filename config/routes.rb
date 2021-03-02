@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :users, only: :index do
     resources :events, only: [ :new, :create ]
+  end
 
   resources :daily_statuses, only: [ :index, :create, :update, :update_all ]
 
