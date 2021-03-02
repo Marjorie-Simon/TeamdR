@@ -1,0 +1,23 @@
+.menu {
+  background-color: #ee964b;
+  color: white;
+  align-items: left;
+  margin: 8px;
+  padding: 20px 2px;
+  width: 200px;
+  border-radius: 2px;
+}
+
+.menu ul {
+  list-style-type: none;
+}
+
+.menu-item {
+  color:white;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  text-decoration: none;
+  color: #d90368;
+}
