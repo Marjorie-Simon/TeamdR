@@ -1,21 +1,16 @@
-.menu-container {
-  display: flex;
-  margin: 30px;
-  justify-content: space-between;
+.menu {
+  background-color: $logo-blue;
+  width: 30%;
+  border-radius: 4px;
 }
 
-.menu {
-  background-color: $brown;
+.menu-left {
+  background-color: $logo-blue;
   color: white;
-  margin: 15px;
 
-  margin-top: 60px;
-  width: 30%;
-  border-radius: 2px;
-  height: fit-content;
   }
 
-.menu ul {
+.menu-left ul {
   list-style-type: none;
   padding: 20px;
 }
@@ -27,5 +22,9 @@
 
 .menu-item:hover {
   text-decoration: none;
-  color: $pink;
+  color: $logo-green;
+}
+
+.menu-right {
+
 }
