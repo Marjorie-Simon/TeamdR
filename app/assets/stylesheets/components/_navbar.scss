@@ -13,12 +13,12 @@
 }
 
 .navbar {
-  padding: 0;
+  padding: 0 30px;
   background: $logo-blue;
   display: flex;
 }
 
 .navbar-expand-sm {
-  flex-flow: none;
-  justify-content: none !important;
+  flex-flow: row nowrap;
+  justify-content: space-between;
 }
