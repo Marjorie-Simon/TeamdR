@@ -1,4 +1,10 @@
 .box {
   background-color: $brown;
   padding: 10px;
+  flex-grow: 1;
+}
+
+.menu-right {
+  background-color: $logo-green;
+  width: 30%;
 }
