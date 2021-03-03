@@ -7,8 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require "open-uri"
 # file = URI.open("https://res.cloudinary.com/dai1inff0/image/upload/v1614696012/vxgtpr6kiznptp3mrcc0.jpg")
+require 'faker'
 
-require 'Faker'
 
 puts "Cleaning database..."
 User.destroy_all
