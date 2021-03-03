@@ -1,5 +1,13 @@
 .box {
-  background-color: $brown;
-  height: 600px;
-  padding: 10px;
+  padding: 15px;
+  margin: 15px;
 }
+
+.box-items {
+  padding: 10px;
+  flex-grow: 1;
+  padding: 15px;
+}
+
+
+
