@@ -1,11 +1,13 @@
 .box {
-  background-color: $brown;
+  padding: 15px;
+  margin: 15px;
+}
+
+.box-items {
   padding: 10px;
   flex-grow: 1;
   padding: 15px;
 }
 
-.menu-right {
-  background-color: $logo-green;
-  width: 30%;
-}
+
+
