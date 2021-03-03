@@ -280,7 +280,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.5)
   sass-rails (>= 6)
   selenium-webdriver
-  simple_calendar (~> 2.0)
+  simple_calendar
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)

@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
-    authorize @restaurant
+    authorize @event
   end
 
   def create
