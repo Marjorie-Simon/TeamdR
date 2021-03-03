@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # require "open-uri"
 # file = URI.open("https://res.cloudinary.com/dai1inff0/image/upload/v1614696012/vxgtpr6kiznptp3mrcc0.jpg")
+
 require 'Faker'
 
 puts "Cleaning database..."
@@ -22,3 +23,7 @@ angela = User.create(first_name: "Angela", last_name: "Meek", email: "angela.mee
 end
 
 puts "Finished!"
+
+ida = User.new(first_name: "Ida", last_name: "Blabla", email: "ida.blablatadta@gmail.com", password:"123456", manager: false)
+# ida.photo.attach(io:file, filename: 'ida.png', content_type:'image/png')
+ida.save!
