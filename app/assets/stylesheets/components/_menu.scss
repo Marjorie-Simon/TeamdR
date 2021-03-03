@@ -1,10 +1,19 @@
+.menu-container {
+  display: flex;
+  margin: 30px;
+  justify-content: space-between;
+}
+
 .menu {
   background-color: $brown;
   color: white;
-  margin: 8px;
-  width: 200px;
+  margin: 15px;
+
+  margin-top: 60px;
+  width: 30%;
   border-radius: 2px;
-}
+  height: fit-content;
+  }
 
 .menu ul {
   list-style-type: none;
