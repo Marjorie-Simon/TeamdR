@@ -16,3 +16,8 @@ body {
   font-weight: 300;
 }
 
+.main-container {
+  display: flex;
+  margin: 30px;
+  justify-content: space-between;
+}

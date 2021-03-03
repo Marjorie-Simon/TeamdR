@@ -14,11 +14,12 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="menu-container">
-      <%= render 'shared/menu' %>
+    <div class="main-container">
+      <%= render 'shared/menu-left' %>
       <div>
         <%= yield %>
       </div>
+      <%= render 'shared/menu-right' %>
     </div>
   </body>
 </html>

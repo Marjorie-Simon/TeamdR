@@ -1,21 +1,16 @@
-.menu-container {
-  display: flex;
-  margin: 30px;
-  justify-content: space-between;
-}
-
 .menu {
   background-color: $logo-blue;
-  color: white;
-  margin: 15px;
-
-  margin-top: 60px;
   width: 30%;
-  border-radius: 2px;
-  height: fit-content;
+  border-radius: 4px;
+}
+
+.menu-left {
+  background-color: $logo-blue;
+  color: white;
+
   }
 
-.menu ul {
+.menu-left ul {
   list-style-type: none;
   padding: 20px;
 }
@@ -28,4 +23,8 @@
 .menu-item:hover {
   text-decoration: none;
   color: $logo-green;
+}
+
+.menu-right {
+
 }
