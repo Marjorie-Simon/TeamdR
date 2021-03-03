@@ -276,11 +276,8 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   devise
   dotenv-rails
-<<<<<<< HEAD
-  faker!
-=======
   faker
->>>>>>> 9cff36f8cc0435398f5bfee6144ea034f99b9559
+
   font-awesome-sass
   jbuilder (~> 2.7)
   listen (~> 3.2)
