@@ -1,5 +1,5 @@
 class DailyStatus < ApplicationRecord
   belongs_to :user, dependent: :destroy
-  has_may :ratings
+  has_many :ratings
   validates :date, presence: :true
 end
