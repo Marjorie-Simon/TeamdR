@@ -8,7 +8,7 @@
 # require "open-uri"
 # file = URI.open("https://res.cloudinary.com/dai1inff0/image/upload/v1614696012/vxgtpr6kiznptp3mrcc0.jpg")
 
-require 'Faker'
+require 'faker'
 
 puts "Cleaning database..."
 User.destroy_all
@@ -22,8 +22,8 @@ angela = User.create(first_name: "Angela", last_name: "Meek", email: "angela.mee
   user = User.create(first_name:Faker::Name.first_name, last_name:Faker::Name.last_name, email: Faker::Internet.email, password:Faker::Number.number(digits: 6), manager: false)
 end
 
-puts "Finished!"
+puts "Creating statuses..."
+title = [ "in office", "business trip", "home office", "vacation", "sick leave"]
+status_ida = DailyStatus.create(title: "in office", date: 2021-02-12, user_id: 1)
 
-ida = User.new(first_name: "Ida", last_name: "Blabla", email: "ida.blablatadta@gmail.com", password:"123456", manager: false)
-# ida.photo.attach(io:file, filename: 'ida.png', content_type:'image/png')
-ida.save!
+puts "Finished!"
