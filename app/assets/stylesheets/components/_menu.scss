@@ -1,9 +1,15 @@
+.menu-container {
+  display: flex;
+}
+
 .menu {
   background-color: $brown;
   color: white;
   margin: 8px;
+  margin-top: 60px;
   width: 200px;
   border-radius: 2px;
+  height: fit-content;
 }
 
 .menu ul {
