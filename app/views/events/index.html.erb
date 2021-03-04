@@ -10,7 +10,7 @@
         <%# if event.invitee.photo.attached? %>
           <%#= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
           <%#= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
-        <%# end %> ff
+        <%# end %>
         <div class="notification-content">
           <p><small><%= event.start_time %> <%= event.end_time %></small></p>
           <p><%= event.content %></p>
