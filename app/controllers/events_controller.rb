@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = policy_scope(Event)
-    @event = Event.new
+    @event = Event.new(start_time: Time.now, end_time: Time.now + 1.hour)
     authorize @event
   end
 
