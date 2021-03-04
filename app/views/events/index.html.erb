@@ -7,10 +7,10 @@
   <div class="centered-box">
     <div class="notification">
       <% current_user.events.each do |event| %>
-        <% if event.invitee.photo.attached? %>
+        <%# if event.invitee.photo.attached? %>
           <%#= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
           <%#= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
-        <% end %>
+        <%# end %>
         <div class="notification-content">
           <p><small><%= event.start_time %> <%= event.end_time %></small></p>
           <p><%= event.content %></p>
