@@ -7,8 +7,23 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("chartkick")
 require("chart.js")
+require("chartkick")
+// will be part of Chartkick.js 4.0
+window.dispatchEvent(new Event("chartkick:load"));
+
+// will be part of Chartkick.js 4.0
+Chartkick.destroyAll = function() {
+  for (var id in Chartkick.charts) {
+    Chartkick.charts[id].destroy();
+    delete Chartkick.charts[id];
+  }
+}
+
+// may be part of Chartkick.js 4.0 or may leave it to apps to add
+document.addEventListener("turbolinks:before-render", function() {
+  Chartkick.destroyAll();
+});
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

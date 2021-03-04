@@ -1,10 +1,11 @@
 <div class="box">
   <h1>Hi, I'm your dashboard</h1>
 
+    <%= area_chart DailyStatus.group(:date).where(title: 'office').count, defer: true, width: "800px", height: "500px" %>
+    <%# check that title: office   matches the seed wording. Might have to change office %>
+    
   <div class="centered-box">
 
-    <%= area_chart Visit.group_by_minute(:created_at).maximum(:load_time) %>
-    <%= line_chart completed_tasks_charts_path %>
 
   </div>
 </div>

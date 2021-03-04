@@ -5,7 +5,7 @@ ruby '2.6.6'
 # Calendar
 gem "simple_calendar", "~> 2.0"
 # Chart
-gem "chartkick"
+gem "chartkick", github: 'ankane/chartkick', branch: 'deferrable'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
 # Use postgresql as the database for Active Record
