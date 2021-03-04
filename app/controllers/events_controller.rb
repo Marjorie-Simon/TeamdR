@@ -21,11 +21,11 @@ class EventsController < ApplicationController
     end
   end
 
-  def update
+  def decline
 
   end
 
-  def destroy
+  def join
 
   end
 
