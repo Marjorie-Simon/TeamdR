@@ -23,8 +23,8 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :photo, as: :file %>
-    <%= f.check_box :manager,
-            required: true
+    <%= f.label "manager " %>
+    <%= f.check_box :manager
              %>
   </div>
 
