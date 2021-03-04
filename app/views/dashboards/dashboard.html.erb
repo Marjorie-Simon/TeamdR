@@ -2,9 +2,9 @@
   <h1>Hi, I'm your dashboard</h1>
 
   <div class="graph-box">
-    <%= area_chart DailyStatus.group(:date).where(title: 'office').count, defer: true, width: "100%", height: "500px" %>
+    <%= area_chart DailyStatus.group(:date).where(title: 'office').count, defer: true, width: "100%", height: "100%" %>
     <%# check that title: office   matches the seed wording. Might have to change office %>
-    <%= area_chart DailyStatus.group(:date).where(title: 'office').count, defer: true, width: "50%", height: "500px" %>
+    <%= area_chart DailyStatus.group(:date).where(title: 'office').count, defer: true, width: "100%", height: "100%" %>
   </div>
 
   <div class="centered-box">
