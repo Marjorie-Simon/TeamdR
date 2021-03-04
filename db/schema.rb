@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_145054) do
+ActiveRecord::Schema.define(version: 2021_03_04_113210) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,13 @@ ActiveRecord::Schema.define(version: 2021_03_02_145054) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_daily_statuses_on_user_id"
+  end
+
+  create_table "dashboards", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_dashboards_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -85,6 +92,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_145054) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "daily_statuses", "users"
+  add_foreign_key "dashboards", "users"
   add_foreign_key "events", "users"
   add_foreign_key "ratings", "daily_statuses"
 end

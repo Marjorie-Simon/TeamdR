@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :events
   has_many :daily_statuses
   has_many :ratings, through: :daily_statuses
+  has_many :dashboards
   has_one_attached :photo
   validates :first_name, presence: :true
   validates :last_name, presence: :true
