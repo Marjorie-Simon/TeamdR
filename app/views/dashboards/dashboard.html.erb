@@ -3,6 +3,9 @@
 
   <div class="centered-box">
 
+    <%= area_chart Visit.group_by_minute(:created_at).maximum(:load_time) %>
+    <%= line_chart completed_tasks_charts_path %>
+
   </div>
 </div>
 
@@ -14,6 +17,8 @@
 
       <div>
         <a href="#" class="btn btn-medium gray">events</a>
+      </div>
+      <div>
         <a href="#" class="btn btn-medium gray">attendance</a>
       </div>
 
