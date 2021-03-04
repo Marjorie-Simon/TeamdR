@@ -1,9 +1,4 @@
-.navbar-teamdr {
-  justify-content: space-between;
-  background: $logo-blue;
-}
-
-.navbar-teamdr .navbar-collapse {
+.navbar-collapse {
   flex-grow: 0;
 }
 
@@ -16,3 +11,15 @@
   box-shadow: 0 0 50px -15px $gray;
   border-radius: 10px;
 }
+
+.navbar {
+  padding: 0 30px;
+  background: $logo-blue;
+  display: flex;
+}
+
+.navbar-expand-sm {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
