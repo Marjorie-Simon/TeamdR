@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   def index
     @events = policy_scope(Event)
+    @event = Event.new
+    authorize @event
   end
 
   def new
@@ -12,6 +14,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
 
   end
+
 
 
   private

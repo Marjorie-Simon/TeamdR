@@ -1,32 +1,34 @@
 <div class="box">
-  <h1>Welcome <%#= @user.first_name %></h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-   <!-- events -->
+  <h1>Events</h1>
+  <!-- event form -->
+  <%= render 'new' %>
+  <!-- searchbar -->
+  <%= form_tag events_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "search-form-control",
+      placeholder: "find event"
+    %>
+    <%= submit_tag "Search", class: "bnt btn-small" %>
+  <% end %>
+  <!-- events -->
   <div class="centered-box">
     <div class="notification">
-      <img src='https://kitt.lewagon.com/placeholder/users/arthur-littm' class="avatar-large" />
-      <div class="notification-content">
-        <p><small>14th January</small></p>
-        <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-      </div>
+      <% current_user.events.each do |event| %>
+        <% if event.invitee.photo.attached? %>
+          <%#= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
+          <%= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
+        <% end %>
+        <div class="notification-content">
+          <p><small><%= event.start_time %> <%= event.end_time %></small></p>
+          <p><%= event.content %></p>
+        </div>
 
-      <div class="notification-actions">
-        <a href="#">Decline</a>
-        <a href="#">Join></a>
-      </div>
+        <div class="notification-actions">
+          <%= link_to "Decline", event_path(event) %>
+          <%= link_to "Join", event_path(event) %>
+        </div>
+      <% end %>
     </div>
-
-    <div class="notification">
-      <img src='https://kitt.lewagon.com/placeholder/users/Eschults' class="avatar-large"/>
-      <div class="notification-content">
-        <p><small>9th January</small></p>
-        <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
-      </div>
-      <div class="notification-actions">
-        <a href="#">Decline</a>
-        <a href="#">Join</a>
-      </div>
-    </div>
-    <a class='btn btn-large blue'></a>
   </div>
 </div>

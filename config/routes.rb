@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :daily_statuses, only: [ :index, :new, :create, :update, :update_all ]
 
-  resources :events, only: [ :index, :new, :create, :approve, :decline ]
+  resources :events, only: [ :index, :new, :create, :destroy, :update, :approve, :decline ]
 
   resources :ratings, only: :create
 
