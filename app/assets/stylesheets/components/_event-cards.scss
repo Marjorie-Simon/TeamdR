@@ -32,12 +32,13 @@
 }
 
 .notification .notification-actions a {
-  color: #999999;
+  color: $black;
   margin-left: 16px;
   font-size: 14px;
+
 }
 
 .notification .notification-actions a:hover {
-  color: #555555;
+  color: $pink;
 }
 

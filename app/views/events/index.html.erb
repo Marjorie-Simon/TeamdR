@@ -1,16 +1,8 @@
 <div class="box">
   <h1>Events</h1>
-  <!-- event form -->
-  <%= render 'new' %>
+
   <!-- searchbar -->
-  <%= form_tag events_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "search-form-control",
-      placeholder: "find event"
-    %>
-    <%= submit_tag "Search", class: "bnt btn-small" %>
-  <% end %>
+  <%= render 'searchbar' %>
   <!-- events -->
   <div class="centered-box">
     <div class="notification">
@@ -34,8 +26,8 @@
 </div>
 
 <div class="menu-right menu col-3">
-  <div class="notification-content">
-    <p><small>9th January</small></p>
-    <p>Lorem ipsum dolor sit amet, <strong>consectetur</strong> adipisicing elit.</p>
+  <!-- event form -->
+  <div class="fieldset">
+    <%= render 'new' %>
   </div>
 </div>
