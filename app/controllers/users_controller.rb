@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    authrize @user
+    authorize @user
   end
 end
