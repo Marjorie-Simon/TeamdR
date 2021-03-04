@@ -1,9 +1,6 @@
 <div class="menu-left menu col-3">
   <ul>
     <li>
-      <a href="#" class="menu-item">Home</a>
-    </li>
-    <li>
       <a href="#" class="menu-item">My Calendar</a>
     </li>
     <li>
@@ -18,5 +15,12 @@
     <li>
       <a href="#" class="menu-item"> Events of today </a>
     </li>
+    <% if current_user != nil %>
+    <% if current_user.manager %>
+      <li>
+      <a href="#" class="menu-item"> Dashboard </a>
+      </li>
+    <% end %>
+    <% end %>
   </ul>
 </div>
