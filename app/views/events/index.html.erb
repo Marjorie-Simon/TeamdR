@@ -18,8 +18,8 @@
           </div>
 
           <div class="notification-actions">
-            <%= link_to "Decline", user_events_path(event) %>
-            <%= link_to "Join", user_events_path(event) %>
+            <%= link_to "Decline", decline_event_path(event), method: :patch %>
+            <%= link_to "Join", approve_event_path(event), method: :patch %>
           </div>
         <% end %>
       </div>

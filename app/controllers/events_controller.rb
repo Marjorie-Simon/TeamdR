@@ -22,16 +22,22 @@ class EventsController < ApplicationController
   end
 
   def approve
-
+    @event = Event.find(params[:id])
+    authorize @event
+    @event.update(event_params)
+    redirect_to @events, notice: "You joined the event with #{@events.user.full_name}"
   end
 
   def decline
-
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    authorize @event
   end
+
 
   private
 
   def event_params
-    params.require(:event).permit(:title, :content, :status, :invitee_id, :start_time, :end_time)
+    params.require(:event).permit(:user_id, :title, :content, :status, :invitee_id, :start_time, :end_time)
   end
 end
