@@ -1,0 +1,35 @@
+.menu {
+  background-color: $logo-blue;
+  width: 30%;
+  border-radius: 4px;
+  opacity: 0.6;
+
+}
+
+.menu-left {
+  background-color: $logo-blue;
+  color: white;
+  // margin: auto;
+ }
+
+
+
+.menu-left ul {
+  list-style-type: none;
+  padding: 20px;
+
+}
+
+.menu-item {
+  color: $black;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  text-decoration: none;
+  color: $pink;
+}
+
+.menu-right {
+
+}

@@ -1,0 +1,23 @@
+<div class="menu-left menu col-3">
+  <ul>
+    <li>
+      <%= link_to "My Calendar", root_path, class:"menu-item" =%>
+    </li>
+    <li>
+      <%= link_to "Colleagues", users_path, class:"menu-item" =%>
+    </li>
+    <%# <li>
+      <a href="#" class="menu-item"> Teams </a>
+    </li> %>
+    <li>
+      <%= link_to "Events", events_path, class:"menu-item" =%>
+    </li>
+    <% if current_user != nil %>
+    <% if current_user.manager %>
+      <li>
+      <%= link_to "Dashboard", dashboard_path, class:"menu-item" =%>
+      </li>
+    <% end %>
+    <% end %>
+  </ul>
+</div>

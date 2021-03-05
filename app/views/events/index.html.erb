@@ -1,0 +1,36 @@
+<div class="box">
+  <h1>Events</h1>
+
+  <!-- searchbar -->
+  <%= render 'searchbar' %>
+  <!-- events -->
+  <div class="centered-box">
+
+    <div class="notification-grid">
+      <div class="notification">
+        <% current_user.events.each do |event| %>
+        <!-- this image tag works now! don't commet it out -->
+          <% if event.user.photo.attached? %>
+            <%= cl_image_tag event.invitee.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
+          <% end %>
+          <div class="notification-content">
+            <p><small><%= event.start_time %> <%= event.end_time %></small></p>
+            <p><%= event.content %></p>
+          </div>
+
+          <div class="notification-actions">
+            <%= link_to "Decline", decline_event_path(event), method: :patch %>
+            <%= link_to "Join", approve_event_path(event), method: :patch %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="menu-right menu col-3">
+  <!-- event form -->
+  <div class="fieldset">
+    <%= render 'new' %>
+  </div>
+</div>

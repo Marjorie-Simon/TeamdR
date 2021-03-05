@@ -1,0 +1,19 @@
+.centered-box {
+  display: flex;
+}
+
+.notifications-grid {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-gap: 8px;
+}
+
+.notification {
+ padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
