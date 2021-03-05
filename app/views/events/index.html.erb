@@ -11,7 +11,7 @@
         <% current_user.events.each do |event| %>
         <!-- this image tag works now! don't commet it out -->
           <% if event.user.photo.attached? %>
-            <%= cl_image_tag event.user.photo.key, class: "avatar-large" %>
+            <%= cl_image_tag event.invitee.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
           <% end %>
           <div class="notification-content">
             <p><small><%= event.start_time %> <%= event.end_time %></small></p>
