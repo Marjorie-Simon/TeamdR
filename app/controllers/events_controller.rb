@@ -24,14 +24,17 @@ class EventsController < ApplicationController
   def approve
     @event = Event.find(params[:id])
     authorize @event
-    @event.update(event_params)
-    redirect_to @events, notice: "You joined the event with #{@events.user.full_name}"
+    @event.status = "approved"
+    @event.save
+    redirect_to events_path, notice: "You joined the event with #{@event.user.full_name}"
   end
 
   def decline
     @event = Event.find(params[:id])
-    @event.update(event_params)
     authorize @event
+    @event.status = "declined"
+    @event.save
+    redirect_to events_path, notice: "You declined the event with #{@event.user.full_name}"
   end
 
 
