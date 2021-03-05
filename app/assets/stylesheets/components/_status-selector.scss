@@ -1,0 +1,9 @@
+.status-selector {
+  padding: 0 30px;
+  background: $logo-blue;
+  display: flex;
+}
+
+.status-selector-collapse {
+  flex-grow: 0;
+}
