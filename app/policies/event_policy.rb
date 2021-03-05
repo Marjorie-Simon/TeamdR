@@ -16,4 +16,12 @@ class EventPolicy < ApplicationPolicy
   def create?
     true
   end
+
+  def approve?
+    true
+  end
+
+  def decline?
+    true
+  end
 end

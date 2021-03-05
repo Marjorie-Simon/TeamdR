@@ -8,11 +8,18 @@ Rails.application.routes.draw do
 
   resources :daily_statuses, only: [ :index, :new, :create, :update, :update_all ]
 
-  resources :events, only: [ :index, :new, :create, :approve, :decline ]
+  resources :events, only: [ :index, :new, :create ] do
+    member do
+      patch :approve
+      patch :decline
+    end
+  end
 
   resources :ratings, only: :create
 
   get '/dashboard', to: 'dashboards#dashboard'
+
+  # get '/users/:id/events', to: 'events'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
