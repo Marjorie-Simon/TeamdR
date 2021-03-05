@@ -5,30 +5,29 @@
           <div class="card-trip-infoss">
             <div>
               <h5>Office Berlin</h5>
-              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-              <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
+              <% @berlin_office.take(5).each do |user| %>
+              <%= cl_image_tag user.photo.key, height: 40, class: "avatar" %>
+              <%  end %>
             </div>
         </div>
           <div class="card-trip-infoss">
             <div>
               <h5>Home Office</h5>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
+              <% if @home_office.empty? %>
+               <p> No one is working at home! </p>
+              <% else %>
+                <% @home_office.take(5).each do |user| %>
+                <%= cl_image_tag user.photo.key, height: 40, class: "avatar" %>
+                <%  end %>
+              <% end %>
           </div>
         </div>
           <div class="card-trip-infoss">
             <div>
               <h5>Kölln Office</h5>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
-                <img class="avatar" alt="avatar" src="https://kitt.lewagon.com/placeholder/users/random"/>
+              <% @kölln_office.take(5).each do |user| %>
+              <%= cl_image_tag user.photo.key, height: 40, class: "avatar" %>
+              <%  end %>
             </div>
         </div>
       </div>
