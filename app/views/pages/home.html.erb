@@ -1,16 +1,28 @@
 <div class="box container col-6">
-    <div class="centered-box">
-        <%= month_calendar do |date| %>
-        <%= date %>
-        <% end %>
+
+  <div class="home-top-content">
+    <div class="home-greeting">
+      <h1>Hello!</h1>
     </div>
+
+    <div class="day-goal">
+      <h6>What is your main goal for today?</h6>
+      <hr class="rounded">
+    </div>
+  </div>
+
+  <div class="centered-box">
+      <%= month_calendar do |date| %>
+      <%= date %>
+      <% end %>
+  </div>
 </div>
 
 <div class="menu-right menu col-3">
   <div class="notification-content">
     <p><small><%= Date.today %></small></p>
 
-    <div class="status-selector navbar-expand-sm fieldset col-4">
+    <div class="status-selector navbar-expand-sm">
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
