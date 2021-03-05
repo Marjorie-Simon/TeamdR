@@ -18,8 +18,8 @@
           </div>
 
           <div class="notification-actions">
-            <%= link_to "Decline", event_path(event) %>
-            <%= link_to "Join", event_path(event) %>
+            <%= link_to "Decline", user_events_path(event) %>
+            <%= link_to "Join", user_events_path(event) %>
           </div>
         <% end %>
       </div>
