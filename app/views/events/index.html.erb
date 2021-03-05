@@ -10,7 +10,7 @@
       <div class="notification">
         <% current_user.events.each do |event| %>
           <% if event.user.photo.attached? %>
-            <%= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
+            <%#= cl_image_tag event.user.photo.first.key, class: "avatar-large" %>
           <% end %>
           <div class="notification-content">
             <p><small><%= event.start_time %> <%= event.end_time %></small></p>
