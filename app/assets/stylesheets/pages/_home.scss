@@ -1,1 +1,19 @@
 // Specific CSS for your home-page
+.home-top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-greeting {
+
+}
+
+.day-goal {
+
+}
+
+hr.rounded {
+  border-top: 1px solid #bbb;
+  border-radius: 5px;
+}
