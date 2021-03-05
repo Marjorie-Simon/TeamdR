@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :events
-  has_many :daily_statuses
+  has_many :daily_statuses, dependent: :destroy
   has_many :ratings, through: :daily_statuses
   has_many :dashboards
   has_one_attached :photo
