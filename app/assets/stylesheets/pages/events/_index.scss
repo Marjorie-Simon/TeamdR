@@ -7,3 +7,13 @@
   display: grid;
   grid-gap: 8px;
 }
+
+.notification {
+ padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  overflow: hidden;
+  background: white;
+}
