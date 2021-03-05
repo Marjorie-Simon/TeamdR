@@ -21,11 +21,11 @@ class EventsController < ApplicationController
     end
   end
 
-  def decline
+  def approve
 
   end
 
-  def join
+  def decline
 
   end
 
