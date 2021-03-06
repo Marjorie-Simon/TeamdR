@@ -12,8 +12,16 @@
   </div>
 
   <div class="centered-box">
-      <%= month_calendar do |date| %>
-      <%= date %>
+      <%= month_calendar(attribute: :starts_at) do |date| %>
+        <%= date %>
+      <% end %>
+      <%= month_calendar events: @meetings do |date, meetings| %>
+        <%= date %>
+        <% meetings.each do |meeting| %>
+          <div>
+           <%= meeting.name %>
+          </div>
+       <% end %>
       <% end %>
   </div>
 </div>
