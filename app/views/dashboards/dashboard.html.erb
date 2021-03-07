@@ -1,8 +1,32 @@
-<div class="box">
+<div class="box col-6">
   <h1>Hi, I'm your dashboard</h1>
 
-    <%#= area_chart DailyStatus.group(:date).where(title: 'office').count, defer: true, width: "800px", height: "500px" %>
-    <%# check that title: office   matches the seed wording. Might have to change office %>
+  <div class="graph-box col-12">
+    <br>
+    <h6>💻 Berlin office</h6>
+    <%= area_chart DailyStatus.group(:date).where(title: 'Berlin Office').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#81b61f"] %>
+
+    <br>
+    <h6>🏠 Berlin home office</h6>
+    <%= area_chart DailyStatus.group(:date).where(title: 'At home').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#4e6e13"] %>
+
+    <br>
+    <h6>🏦 Köln office</h6>
+    <%= area_chart DailyStatus.group(:date).where(title: 'Köln Office').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#1a4b5d"] %>
+
+    <br>
+    <h6>✈ Business trip</h6>
+    <%= area_chart DailyStatus.group(:date).where(title: 'Business trip').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"} %>
+
+    <br>
+    <h6>🌴 Vacation</h6>
+    <%= area_chart DailyStatus.group(:date).where(title: 'Off').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#6e6c13"] %>
+
+    <br>
+    <h6>🤒 Sick leave</h6>
+    <%= area_chart DailyStatus.group(:date).where(title: 'Sick').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#d34185"] %>
+  </div>
+
     
   <div class="centered-box">
 
