@@ -19,6 +19,10 @@ Chartkick.destroyAll = function() {
     delete Chartkick.charts[id];
   }
 }
+// to intialize tooltip on index user page
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
 
 // may be part of Chartkick.js 4.0 or may leave it to apps to add
 document.addEventListener("turbolinks:before-render", function() {
