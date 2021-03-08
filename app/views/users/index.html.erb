@@ -6,7 +6,8 @@
             <div>
               <h5>Office Berlin</h5>
               <% @berlin_office.take(5).each do |user| %>
-              <%= cl_image_tag user.photo.key, width: 40,  height: 40, crop: :fill, class: "avatar" %>
+              <%= cl_image_tag user.photo.key, width: 40,  height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name %>
+              
               <%  end %>
             </div>
         </div>
@@ -26,7 +27,7 @@
             <div>
               <h5>Kölln Office</h5>
               <% @kölln_office.take(5).each do |user| %>
-              <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar" %>
+              <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name  %>
               <%  end %>
             </div>
         </div>
