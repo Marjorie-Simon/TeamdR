@@ -2,29 +2,66 @@
 
   <div class="home-top-content">
     <div class="home-greeting">
-      <h1>Hello!</h1>
+      <h1>Hello <%= current_user.first_name %>!</h1>
     </div>
 
     <div class="day-goal">
       <h6>What is your main goal for today?</h6>
-      <hr class="rounded">
+      <input type="text", text-align: center;>
     </div>
   </div>
 
   <div class="centered-box">
-      <%= month_calendar(attribute: :starts_at) do |date| %>
+
+      <%= month_calendar(attribute: :starts_at) do |date, events| %>
         <%= date %>
-      <% end %>
-      <%= month_calendar events: @meetings do |date, meetings| %>
-        <%= date %>
-        <% meetings.each do |meeting| %>
-          <div>
-           <%= meeting.name %>
+
+  <% events.each do |event| %>
+    <div>
+      <%= event.start_time %>
+    </div>
+  <% end %>
+
+<% end %>
+  </div>
+<button id="modal-btn"> Rate your day!</button>
+</div>
+
+<!-- Button trigger modal -->
+
+
+
+
+<!-- Modal -->
+<div class="modal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <p>How was your day <%= current_user.first_name %> ?</p>
+        <div class="rating-stars-container">
+          <div class="rating-stars">
+            <i class="rating-star fa fa-star-o" data-rating="1"></i>
+            <i class="rating-star fa fa-star-o" data-rating="2"></i>
+            <i class="rating-star fa fa-star-o" data-rating="3"></i>
+            <i class="rating-star fa fa-star-o" data-rating="4"></i>
+            <i class="rating-star fa fa-star-o" data-rating="5"></i>
           </div>
-       <% end %>
-      <% end %>
+        </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <div class="menu-right menu col-3">
   <div class="notification-content">

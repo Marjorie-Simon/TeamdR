@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("chart.js")
 require("chartkick")
+require("bootstrap")
 // will be part of Chartkick.js 4.0
 window.dispatchEvent(new Event("chartkick:load"));
 
@@ -51,3 +52,22 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+//Modal for rating
+let modalBtn = document.getElementById("modal-btn")
+let modal = document.querySelector(".modal")
+let closeBtn = document.querySelector(".close-btn")
+modalBtn.onclick = function(){
+  modal.style.display = "block"
+}
+closeBtn.onclick = function(){
+  modal.style.display = "none"
+}
+window.onclick = function(e){
+  if(e.target == modal){
+    modal.style.display = "none"
+  }
+}
+
+//stars
+
