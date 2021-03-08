@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :daily_statuses, dependent: :destroy
   has_many :ratings, through: :daily_statuses
   has_many :dashboards
+  has_many :events_as_invitee, class_name: "Event", foreign_key: :invitee_id
   has_one_attached :photo
   validates :first_name, presence: :true
   validates :last_name, presence: :true
