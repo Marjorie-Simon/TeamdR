@@ -3,6 +3,6 @@ class DailyStatus < ApplicationRecord
   has_many :ratings
   validates :date, presence: :true
 
-  extend SimpleCalendar
-  has_calendar :attribute => :date
+ # extend SimpleCalendar
+ # has_calendar :attribute => :date
 end
