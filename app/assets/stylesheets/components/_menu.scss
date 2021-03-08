@@ -1,15 +1,12 @@
 .menu {
-  background-color: $logo-blue;
+  background-color: $light-blue;
   width: 30%;
   border-radius: 4px;
-  opacity: 0.6;
-
 }
 
 .menu-left {
-  background-color: $logo-blue;
   color: white;
-  // margin: auto;
+  position: relative;
  }
 
 
@@ -17,7 +14,10 @@
 .menu-left ul {
   list-style-type: none;
   padding: 20px;
-
+  position: absolute;
+  margin: 0;
+  top: 30%;
+  line-height: 250%;
 }
 
 .menu-item {
@@ -30,6 +30,6 @@
   color: $pink;
 }
 
-.menu-right {
+// .menu-right {
 
-}
+// }
