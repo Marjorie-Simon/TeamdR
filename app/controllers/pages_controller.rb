@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     else
       @date = Date.today
     end
+    @daily_status = DailyStatus.new
   end
 end
 
