@@ -32,16 +32,15 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
-            <p class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">What is your status?</p>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">💻 in office</a>
-              <a class="dropdown-item" href="#">🏠 home office</a>
-              <a class="dropdown-item" href="#">✈ business trip</a>
-              <a class="dropdown-item" href="#">🌴 vacation</a>
-              <a class="dropdown-item" href="#">🤒 sick leave</a>
-            </div>
+              <p>What is your status?</p>
+             <%= simple_form_for(@daily_status) do |f| %>
+              <%= f.input :title, collection: ["Berlin office 🐻", "Köln office ⛪️", "At home 💻", "Business Trip ✈️", "Off 🏝", "Sick leave 🤒"]  %>
+              <%= f.input :date, as: :hidden, :input_html => { :value => @date } %>
+             <%= f.submit %>
+              <%end%>
           </li>
         </ul>
+
       </div>
     </div>
 

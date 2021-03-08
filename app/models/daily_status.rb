@@ -4,5 +4,5 @@ class DailyStatus < ApplicationRecord
   validates :date, presence: :true
 
   extend SimpleCalendar
-  # has_calendar :attribute => :date
+  has_calendar :attribute => :date
 end
