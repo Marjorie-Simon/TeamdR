@@ -12,15 +12,21 @@
   </div>
 
   <div class="centered-box">
-      <%= month_calendar do |date| %>
-      <%= date %>
-      <% end %>
+      <%= month_calendar events: @daily_statuses, attribute: :date do |date, daily_statuses| %>
+        <%= link_to date.strftime("%e"), root_path({date: date}) %>
+
+        <% daily_statuses.each do |daily_status| %>
+          <div>
+            <%= daily_status.title %>
+          </div>
+       <% end %>
+    <% end %>
   </div>
 </div>
 
 <div class="menu-right menu col-3">
   <div class="notification-content">
-    <p><small><%= Date.today %></small></p>
+    <p><small><%= @date %></small></p>
 
     <div class="status-selector navbar-expand-sm">
       <div class="collapse navbar-collapse">
