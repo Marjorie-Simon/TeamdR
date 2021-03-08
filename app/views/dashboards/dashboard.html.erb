@@ -9,7 +9,7 @@
   <div class="graph-box col-12">
     <br>
     <h6>💻 Berlin office</h6>
-    <%= area_chart DailyStatus.group(:date).where(title: 'Berlin Office').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#81b61f"] %>
+    <%= area_chart DailyStatus.group_by_day(:date).where(title: 'Berlin Office').count, defer: true, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#81b61f"] %>
 
     <br>
     <h6>🏠 Berlin home office</h6>
