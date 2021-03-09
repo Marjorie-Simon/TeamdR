@@ -9,8 +9,6 @@
               <%= cl_image_tag user.photo.key, width: 40,  height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name %>
               <% end %>
                <button type="button" class="btn toggle_popover"> + </button>
-              <%  end %>
-              <button type="button" class="btn btn-sm btn-danger" data-toggle="popover" data-content= 'yyy' >Click to toggle popover</button>
             </div>
         </div>
         <%= render :partial => 'popover', locals: { berlin_office: @berlin_office }%>
@@ -51,7 +49,6 @@
               <% end %>
           </div>
         </div>
-
       </div>
     </div>
 </div>
