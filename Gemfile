@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'pundit'
-gem "simple_calendar"
 gem "chartkick", github: 'ankane/chartkick', branch: 'deferrable'
 gem 'groupdate'
 # Use Active Storage variant
