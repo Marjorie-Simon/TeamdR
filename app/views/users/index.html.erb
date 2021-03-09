@@ -4,7 +4,7 @@
       <div class="card-trip-grid">
           <div class="card-trip-infoss">
             <div>
-              <h5>Office Berlin</h5>
+              <h5>Office Berlin 🐻 </h5>
               <% @berlin_office.take(5).each do |user| %>
               <%= cl_image_tag user.photo.key, width: 40,  height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name %>
               
@@ -13,7 +13,7 @@
         </div>
           <div class="card-trip-infoss">
             <div>
-              <h5>Home Office</h5>
+              <h5>Home Office 💻 </h5>
               <% if @home_office.empty? %>
                <p> No one is working at home! </p>
               <% else %>
@@ -25,12 +25,28 @@
         </div>
           <div class="card-trip-infoss">
             <div>
-              <h5>Kölln Office</h5>
+              <h5>Kölln Office ⛪️ </h5>
               <% @kölln_office.take(5).each do |user| %>
               <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name  %>
               <%  end %>
             </div>
         </div>
+          <div class="card-trip-infoss">
+            <div>
+              <h5>Holiday 🏝 </h5>
+              <% @holiday.take(5).each do |user| %>
+              <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name  %>
+              <%  end %>
+          </div>
+        </div>
+          <div class="card-trip-infoss">
+            <div>
+              <h5>Business trip ✈️ </h5>
+              <% @business_trip.take(5).each do |user| %>
+              <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name  %>
+              <%  end %>
+          </div>
+        </div>  
       </div>
     </div>
 </div>

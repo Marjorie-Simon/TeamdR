@@ -55,6 +55,14 @@ daily_status_seed_json['feed']['entry'].each_with_index do |seed, index|
     )
   daily_status.save!
   puts "daily status #{index} created"
+
+  puts "Creating ratings..."
+  rating = Rating.new(
+    value_stars: rand(1..5),
+    daily_status_id: daily_status.id
+  )
+  rating.save!
+  puts "Ratings created!!"
 end
 
 puts "Successfully created daily statuses. Nailed it YEAH!"

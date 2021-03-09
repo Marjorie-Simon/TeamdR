@@ -1,16 +1,26 @@
-// .notifications {
-//   display: flex;
-//   justify-content: space-between;
-// }
+
+
+.notifications-grid {
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
 
 .notification {
+  padding: 16px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 8px;
+  position: relative;
+  overflow: hidden;
   background: white;
+  border: 1px solid $light-gray;
   padding: 8px 16px;
-  border: 1px solid rgb(235,235,235);
+  margin-bottom: 8px;
+  height: 150px;
 }
+
 
 .notification .notification-content {
   flex-grow: 1;
