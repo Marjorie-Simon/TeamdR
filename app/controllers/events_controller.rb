@@ -38,6 +38,14 @@ class EventsController < ApplicationController
     redirect_to events_path, notice: "You declined the event with #{@event.user.full_name}"
   end
 
+  def update
+
+  end
+
+  def destroy
+
+  end
+
 
   private
 

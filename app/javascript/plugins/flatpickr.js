@@ -6,6 +6,7 @@ const initFlatpickr = () => {
     dateFormat: "H:i",
     minTime: "09:00",
     maxTime: "21:00",
+    defaultDate: "today",
   });
 };
 
