@@ -8,6 +8,7 @@
     <div class="day-goal">
       <h6>What is your main goal for today?</h6>
       <hr class="rounded">
+     <span id="goal"><input type="text" style="text-align: center;" placeholder="My daily goal is..."></input></span>
     </div>
   </div>
 
@@ -33,11 +34,19 @@
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
               <p>What is your status?</p>
-             <%= simple_form_for(@daily_status) do |f| %>
-              <%= f.input :title, collection: ["Berlin office 🐻", "Köln office ⛪️", "At home 💻", "Business Trip ✈️", "Off 🏝", "Sick leave 🤒"]  %>
-              <%= f.input :date, as: :hidden, :input_html => { :value => @date } %>
-             <%= f.submit %>
+              <% if @daily_status %>
+                <%= simple_form_for(@daily_status) do |f| %>
+                <%= f.input :title, collection: ["Berlin office 🐻", "Köln office ⛪️", "At home 💻", "Business Trip ✈️", "Off 🏝", "Sick leave 🤒"], selected: @daily_status.title  %>
+                <%= f.input :date, as: :hidden, :input_html => { :value => @date } %>
+                <%= f.submit %>
+                <%end%>
+              <%else%>
+                <%= simple_form_for(@new_daily_status) do |f| %>
+                <%= f.input :title, collection: ["Berlin office 🐻", "Köln office ⛪️", "At home 💻", "Business Trip ✈️", "Off 🏝", "Sick leave 🤒"]  %>
+                <%= f.input :date, as: :hidden, :input_html => { :value => @date } %>
+                <%= f.submit %>
               <%end%>
+            <%end%>
           </li>
         </ul>
 
