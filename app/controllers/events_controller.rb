@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   def index
+    @berlin_office = User.joins(:daily_statuses).where(daily_statuses: {title: "Berlin Office 🐻", date: Date.today})
     @events = policy_scope(Event)
     @event = Event.new(start_time: Time.now, end_time: Time.now + 1)
     authorize @event
