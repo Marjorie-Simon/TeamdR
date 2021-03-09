@@ -1,4 +1,4 @@
-<div>
+<div class="box">
   <h1>Where are my colleagues today?</h1>
     <div class="centered-box">
       <div class="card-trip-grid">
@@ -7,8 +7,8 @@
               <h5>Office Berlin 🐻 </h5>
               <% @berlin_office.take(5).each do |user| %>
               <%= cl_image_tag user.photo.key, width: 40,  height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name %>
-              
               <%  end %>
+              <button type="button" class="btn btn-sm btn-danger" data-toggle="popover" data-content= 'yyy' >Click to toggle popover</button>
             </div>
         </div>
           <div class="card-trip-infoss">
