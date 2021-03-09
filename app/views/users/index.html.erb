@@ -30,7 +30,9 @@
               <% @kölln_office.take(5).each do |user| %>
               <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name  %>
               <%  end %>
+              <button type="button" class="btn toggle_popover"> + </button>
             </div>
+            <%= render :partial => 'popover_kölln', locals: { kölln_office: @kölln_office }%>
         </div>
           <div class="card-trip-infoss">
             <div>
@@ -38,7 +40,9 @@
               <% @holiday.take(5).each do |user| %>
               <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name  %>
               <%  end %>
+              <button type="button" class="btn toggle_popover"> + </button>
           </div>
+            <%= render :partial => 'popover_holiday', locals: { holiday: @holiday }%>
         </div>
 
           <div class="card-trip-infoss">

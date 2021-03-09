@@ -1,0 +1,5 @@
+<div class= 'popover_users display_none'>
+    <% kölln_office.offset(5).each do |user| %>
+    <%= cl_image_tag user.photo.key, width: 40,  height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name %>
+    <% end %>
+</div>
