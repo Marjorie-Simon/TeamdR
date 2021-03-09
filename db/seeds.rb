@@ -14,7 +14,7 @@ require 'open-uri'
 puts "Destroying all Users"
 User.destroy_all
 puts "Destroying all daily statuses"
-DailyStatus.destroy_all
+#DailyStatus.destroy_all
 # creating all users from google spreadheet
 puts "Creating users..."
 
