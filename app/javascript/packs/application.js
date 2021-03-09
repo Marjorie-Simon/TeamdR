@@ -20,9 +20,10 @@ Chartkick.destroyAll = function() {
   }
 }
 // to intialize tooltip on index user page
-$(function () {
-  $('[data-toggle="tooltip"]').tooltip()
-})
+// $(function () {
+// $('[data-toggle="tooltip"]').tooltip()
+// })
+
 
 // may be part of Chartkick.js 4.0 or may leave it to apps to add
 document.addEventListener("turbolinks:before-render", function() {
@@ -45,13 +46,17 @@ document.addEventListener("turbolinks:before-render", function() {
 // External imports
 import "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initPopover } from "../plugins/init_popover";
+import { initTooltip } from "../plugins/tooltip";
 
-initFlatpickr();
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
+  initFlatpickr();
+  initPopover();
+  initTooltip();
   // initSelect2();
 });

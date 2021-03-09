@@ -1,6 +1,6 @@
 class DailyStatus < ApplicationRecord
   belongs_to :user
-  has_one :rating
+  has_one :rating, dependent: :destroy
   validates :date, presence: :true
 
   extend SimpleCalendar
