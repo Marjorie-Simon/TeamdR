@@ -6,7 +6,8 @@ class PagesController < ApplicationController
     else
       @date = Date.today
     end
-    @daily_status = DailyStatus.new
+    @new_daily_status = DailyStatus.new
+    @daily_status = current_user.daily_statuses.find_by(date: params[:date])
   end
 end
 
