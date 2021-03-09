@@ -10,8 +10,8 @@
               <% end %>
                <button type="button" class="btn toggle_popover"> + </button>
             </div>
+            <%= render :partial => 'popover', locals: { berlin_office: @berlin_office }%>
         </div>
-        <%= render :partial => 'popover', locals: { berlin_office: @berlin_office }%>
           <div class="card-trip-infoss">
             <div>
               <h5>Home Office 💻 </h5>
