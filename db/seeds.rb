@@ -62,9 +62,16 @@ daily_status_seed_json['feed']['entry'].each_with_index do |seed, index|
     daily_status_id: daily_status.id
   )
   rating.save!
-  puts "Ratings created!!"
+end
+20.times do
+  rating = Rating.new(
+    value_stars: rand(3..5),
+    daily_status: DailyStatus.all.sample
+  )
+  rating.save!
 end
 
+puts "Ratings created!!"
 puts "Successfully created daily statuses. Nailed it YEAH!"
 
 
