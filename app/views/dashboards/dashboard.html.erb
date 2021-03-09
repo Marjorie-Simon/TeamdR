@@ -9,27 +9,27 @@
   <div class="graph-box col-12">
     <br>
     <h6>💻 Berlin office</h6>
-    <%= area_chart DailyStatus.group_by_day(:date).where(title: 'Berlin Office 🐻').count, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#81b61f"] %>
+    <%= area_chart @berlin_office, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#81b61f"] %>
 
     <br>
     <h6>🏠 Berlin home office</h6>
-    <%= area_chart DailyStatus.group_by_day(:date).where(title: 'At home 💻').count, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#4e6e13"] %>
+    <%= area_chart @home_office, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#4e6e13"] %>
 
     <br>
     <h6>🏦 Köln office</h6>
-    <%= area_chart DailyStatus.group_by_day(:date).where(title: 'Köln Office ⛪️').count, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#1a4b5d"] %>
+    <%= area_chart @köln_office, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#1a4b5d"] %>
 
     <br>
     <h6>✈ Business trip</h6>
-    <%= area_chart DailyStatus.group_by_day(:date).where(title: 'Business trip ✈️').count, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"} %>
+    <%= area_chart @business_trip, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"} %>
 
     <br>
     <h6>🌴 Vacation</h6>
-    <%= area_chart DailyStatus.group_by_day(:date).where(title: 'Off 🏝').count, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#6e6c13"] %>
+    <%= area_chart @vacation, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#6e6c13"] %>
 
     <br>
     <h6>🤒 Sick leave</h6>
-    <%= area_chart DailyStatus.group_by_day(:date).where(title: 'Sick 🤒').count, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#d34185"] %>
+    <%= area_chart @sick_leave, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#d34185"] %>
   </div>
 
     
@@ -52,7 +52,17 @@
         <a href="#" class="btn btn-medium gray">attendance</a>
       </div>
 
+
       <fieldset class="fieldset field-happiness">
+        <span><strong>Employee happiness</strong></span>
+        <br>
+        <br>
+        <%= bar_chart @employee_happiness, defer: true, xtitle: "Total employee votes", ytitle: "😄      😐      😩", height: "200px", messages: {empty: "No data"}, colors: ["#81b61f"] %>
+      </fieldset>
+
+
+
+      <%# <fieldset class="fieldset field-happiness">
         <span><strong>Employee happiness</strong></span>
         <br>
         <br>
@@ -80,7 +90,7 @@
         <div class="progress mega-sad-bar">
           <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
-      </fieldset>
+      </fieldset> %>
 
     </div>
   </div>
