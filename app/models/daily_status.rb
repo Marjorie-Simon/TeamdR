@@ -4,5 +4,5 @@ class DailyStatus < ApplicationRecord
   has_one :rating, dependent: :destroy
   validates :date, presence: :true
 
-  has_calendar :attribute => :date
+ # has_calendar :attribute => :date
 end

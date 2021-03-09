@@ -48,6 +48,7 @@ import "bootstrap";
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initPopover } from "../plugins/init_popover";
 import { initTooltip } from "../plugins/tooltip";
+import { togglePopover} from "../components/toggle_popover";
 
 
 // Internal imports, e.g:
@@ -59,4 +60,5 @@ document.addEventListener('turbolinks:load', () => {
   initPopover();
   initTooltip();
   // initSelect2();
+  togglePopover();
 });
