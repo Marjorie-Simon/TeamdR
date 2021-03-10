@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def full_name
     "#{self.first_name} #{self.last_name}"
   end
+
+  def todaysgoal
+    self.daily_statuses.find_by(date: Date.today).daily_goal
+  end
 end
