@@ -24,11 +24,11 @@
     <% unless current_user.todaysgoal.empty? %>
   <div class="card-goal">
     <div>
-      <h5>Today I will:</h5>
-      <h6><%= current_user.todaysgoal %></h6>
+      <p><strong>Today I will:</strong></p>
+      <p><strong><%= current_user.todaysgoal %> 🎉</strong></p>
     </div>
     <div>
-      <p>Let's make it happen 🏋️‍♀️!</p>
+      <p><em>Let's make it happen 🏋️‍♀️!</em></p>
     </div>
   </div>
   <% end %>

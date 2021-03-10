@@ -16,14 +16,17 @@
  }
 
 .menu-left .card-goal {
-  height: 150px;
-  padding-top: 20px;
-  padding-bottom: 15px;
-  justify-content: center;
+  margin-top: 150px;
+  height: 100px;
+  padding-top: 5px;
+  padding-bottom: 25px;
+  vertical-align: middle;
   border-radius: 8px;
   text-align: center;
   background-color: $white;
   color: $pink;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .menu-left ul {
