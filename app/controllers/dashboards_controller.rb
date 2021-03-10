@@ -1,6 +1,7 @@
 class DashboardsController < ApplicationController
 
   def dashboard
+    
     skip_authorization
     # @dashboards = policy_scope(Dashboard)
 
@@ -13,16 +14,16 @@ class DashboardsController < ApplicationController
 
     @employee_happiness = Rating.group(:value_stars).count
 
-    @startdate = Date.today
-    @enddate = Date.today + 7
+    @start_date = Date.today
+    @end_date = Date.today + 7
     
-    if params[:startdate].present?
-      @startdate = params[:startdate]
+    if params[:timeframe].present?
+      @start_date = params[:timeframe][:start_date]
     end
-    if params[:enddate].present?
-      @enddate = params[:enddate]
+    if params[:timeframe].present?
+      @end_date = params[:timeframe][:end_date]
     end
-    @berlin_office = DailyStatus.group_by_day(:date).where(title: 'Berlin Office 🐻').count
+    
   end
 
 end
