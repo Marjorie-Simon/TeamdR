@@ -1,26 +1,20 @@
 <h6 class="text-center">Todays Events</h6>
 <% unless current_user.events_as_invitee.empty? %>
     <% current_user.events_as_invitee.each do |event| %>
-    <div class="notification">
+    <div class="latest-events">
     <!-- this image tag works now! don't commet it out -->
-      <p><%= event.user.full_name %></p>
-      <break>
+      <div>
+      <p><strong><%= event.user.full_name %></strong></p>
       <% if event.user.photo.attached? %>
-        <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
+        <%= cl_image_tag event.user.photo.key, width: 30, height: 30, crop: :fill, class: "avatar-small" %>
       <% end %>
-      <div class="notification-content">
-        <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <br> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
-        <p><strong> <%= event.title %></strong> </p>
-        <p> <%= event.content %></p>
       </div>
-
-      <div class="notification-actions">
-        <%= link_to "Decline", event_path(event), method: :delete %>
-        <%= link_to "Join", approve_event_path(event), method: :patch %>
-        <%#= link_to "✉️",  %>
+      <div>
+        <p><%= event.title %> </p>
+        <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> </small></p>
+        <!-- <p> <%= event.content %></p> -->
       </div>
     <% end %>
-
     </div>
 <% else %>
       <p>I will get an invitation soon.</p>

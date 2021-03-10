@@ -9,5 +9,12 @@ margin-bottom: 15px;
 }
 
 .latest-events {
-
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 5px;
+  margin: 5px;
+  background-color: #B6CADD;
 }

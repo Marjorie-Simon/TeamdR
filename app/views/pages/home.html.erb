@@ -39,6 +39,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav">
           <li class="nav-item dropdown">
+              <p></p>
               <p>What is your status?</p>
               <% if @daily_status %>
                 <%= simple_form_for(@daily_status) do |f| %>
@@ -55,11 +56,9 @@
             <%end%>
           </li>
         </ul>
-
-      </div> latest-events
     </div>
   </div>
-  <div class="menu-cards latest-events">
+  <div class="menu-cards">
     <%= render 'events/latest-events' %>
   </div>
 </div>
