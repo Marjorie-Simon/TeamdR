@@ -27,8 +27,16 @@ hr.rounded {
   border-top: 1px solid #bbb;
   border-radius: 5px;
 }
-
-
+.card-goal2 {
+height: 190px;
+padding-top: 25px;
+padding-bottom: 15px;
+justify-content: center;
+border-radius: 8px;
+text-align: center;
+background-color: $white;
+color: $pink;
+}
 .simple-calendar {
 
   .day {
