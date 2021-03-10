@@ -20,17 +20,15 @@
       </li>
     <% end %>
   </ul>
-  <% if user_signed_in? %>
-    <% unless current_user.todaysgoal.empty? %>
-  <div class="card-goal">
-    <div>
-      <h5>Today I will:</h5>
-      <h6><%= current_user.todaysgoal %></h6>
+  <% if user_signed_in? && current_user.todaysgoal.present? %>
+    <div class="card-goal">
+      <div>
+        <h5>Today I will:</h5>
+        <h6><%= current_user.todaysgoal %></h6>
+      </div>
+      <div>
+        <p>Let's make it happen 🏋️‍♀️!</p>
+      </div>
     </div>
-    <div>
-      <p>Let's make it happen 🏋️‍♀️!</p>
-    </div>
-  </div>
-  <% end %>
   <% end %>
 </div>

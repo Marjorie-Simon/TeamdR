@@ -1,6 +1,7 @@
 class DashboardsController < ApplicationController
 
   def dashboard
+    
     skip_authorization
     # @dashboards = policy_scope(Dashboard)
 
@@ -12,6 +13,17 @@ class DashboardsController < ApplicationController
     @sick_leave = DailyStatus.group_by_day(:date).where(title: 'Sick 🤒').count
 
     @employee_happiness = Rating.group(:value_stars).count
+
+    @start_date = Date.today
+    @end_date = Date.today + 7
+    
+    if params[:timeframe].present?
+      @start_date = params[:timeframe][:start_date]
+    end
+    if params[:timeframe].present?
+      @end_date = params[:timeframe][:end_date]
+    end
+    
   end
 
 end
