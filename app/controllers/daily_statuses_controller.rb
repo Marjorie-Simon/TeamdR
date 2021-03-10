@@ -12,7 +12,11 @@ class DailyStatusesController < ApplicationController
   end
 
   def update
-    @daily_status = current_user.daily_statuses.find_by(date: params[:daily_status][:date])
+    if params[:daily_status][:date].present?
+      @daily_status = current_user.daily_statuses.find_by(date: params[:daily_status][:date])
+    else
+       @daily_status = current_user.daily_statuses.find_by(date: Date.today)
+    end
     @daily_status.update(daily_status_params)
      authorize @daily_status
       if @daily_status.save
@@ -22,12 +26,16 @@ class DailyStatusesController < ApplicationController
     end
   end
 
-
+  def dailygoal
+    @daily_status = current_user.daily_statuses.find_by(date: params[:daily_status][:date])
+    @daily_status.daily_goal.update(daily_goal_params)
+    authorize @daily_status
+  end
 
   private
 
   def daily_status_params
-    params.require(:daily_status).permit(:title, :date)
+    params.require(:daily_status).permit(:title, :date, :daily_goal)
   end
 
 

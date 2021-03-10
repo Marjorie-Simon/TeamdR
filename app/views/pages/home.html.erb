@@ -5,11 +5,18 @@
       <h1>Hello <%= current_user.first_name %>!</h1>
     </div>
 
-    <div class="day-goal">
-      <h6>What is your main goal for today?</h6>
-      <hr class="rounded">
-     <span id="goal"><input type="text" style="text-align: center;" placeholder="My daily goal is..."></input></span>
-    </div>
+
+    <% if @daily_status %>
+
+      <div class="day-goal">
+        <hr class="rounded">
+        <%= simple_form_for(@daily_status) do |f| %>
+        <%= f.input :daily_goal, label: 'What is your main goal for today?', selected: @daily_status.daily_goal %>
+        <%= f.submit "Set goal 🎯!" %>
+        <% end %>
+
+      </div>
+    <% end %>
   </div>
 
   <div class="centered-box">
