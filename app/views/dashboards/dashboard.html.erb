@@ -39,33 +39,21 @@
   <div class="notification-content">
     <div class="dashboard-right-box">
 
-<<<<<<< HEAD
-      <p><small><%= Date.today %></small></p>
-=======
-    <!--   <div>
-        <a href="#" class="btn btn-medium gray">events</a>
-      </div>
-      <div>
-        <a href="#" class="btn btn-medium gray">attendance</a>
-      </div>
- -->
->>>>>>> master
-
       <fieldset class="fieldset field-happiness">
         <h6 class="text-center">Employee Happiness</h6>
           <%= bar_chart @employee_happiness, defer: true, ytitle: "😄      😐      😩", height: "200px", messages: {empty: "No data"}, colors: ["#81b61f"] %>
         <p class="text-center">votes</p>
       </fieldset>
-      
+
+      <br>
       <div class="graphfilter">
         <div>
-          <%= form_tag dashboard_path, method: :get do %>
-            <%= text_field_tag :query,
-              params[:timeframe],
-              class: "form-control",
-              placeholder: "Choose dates"
-            %>
-            <%= submit_tag "Filter" %>
+          <%= form_with url: dashboard_path, method: :get do |f| %>
+            <%= f.label :startdate, "Starting date" %>
+            <%= f.date_field :startdate %>
+            <%= f.label :enddate, "Ending date" %>
+            <%= f.date_field :enddate %>
+            <%= f.submit "Submit", disable_with: 'Submiting...' %>
           <% end %>
         </div>
       </div>
