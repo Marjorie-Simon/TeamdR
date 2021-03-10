@@ -32,36 +32,39 @@
     <%= area_chart @sick_leave, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#d34185"] %>
   </div>
 
-    
+
   <div class="centered-box">
 
 
   </div>
 </div>
 
-<div class="menu-right menu col-3">
+<div class="menu-right menu col-sm-3 col-xl-2">
   <div class="notification-content">
     <div class="dashboard-right-box">
 
       <p><small><%= Date.today %></small></p>
 
+<<<<<<< HEAD
       <div class="graphfilter">
 
       </div>
 
       <div>
+=======
+    <!--   <div>
+>>>>>>> master
         <a href="#" class="btn btn-medium gray">events</a>
       </div>
       <div>
         <a href="#" class="btn btn-medium gray">attendance</a>
       </div>
-
+ -->
 
       <fieldset class="fieldset field-happiness">
-        <span><strong>Employee happiness</strong></span>
-        <br>
-        <br>
-        <%= bar_chart @employee_happiness, defer: true, xtitle: "Total employee votes", ytitle: "😄      😐      😩", height: "200px", messages: {empty: "No data"}, colors: ["#81b61f"] %>
+        <h6 class="text-center">Employee Happiness</h6>
+          <%= bar_chart @employee_happiness, defer: true, ytitle: "😄      😐      😩", height: "200px", messages: {empty: "No data"}, colors: ["#81b61f"] %>
+        <p class="text-center">votes</p>
       </fieldset>
 
 

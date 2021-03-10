@@ -1,7 +1,7 @@
 .menu {
   background-color: $light-blue;
-  width: 30%;
-  border-radius: 4px;
+  width: 25%;
+  // border-radius: 4px;
   height: 100vh;
 }
 
@@ -9,7 +9,7 @@
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  // justify-content: center;
  }
 
 
@@ -34,3 +34,7 @@
 // .menu-right {
 
 // }
+
+*:focus {
+  outline:none !important
+}
