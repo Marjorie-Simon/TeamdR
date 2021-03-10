@@ -11,6 +11,7 @@
 require 'json'
 require 'open-uri'
 
+Rating.destroy_all
 puts "Destroying all Users"
 User.destroy_all
 puts "Destroying all daily statuses"
