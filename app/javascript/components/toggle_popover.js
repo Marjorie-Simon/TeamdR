@@ -1,9 +1,11 @@
 const togglePopover = () => {
-  const toggleButton = document.querySelector(".toggle_popover")
-  if (toggleButton) {
-    toggleButton.addEventListener("click",() => {
-   const popover = document.querySelector(".popover_users")
-   popover.classList.toggle("display_none")
+  const toggleButtons = document.querySelectorAll(".toggle_popover")
+  if (toggleButtons) {
+    toggleButtons.forEach((button) => {
+    button.addEventListener("click",(e) => {
+  const popover = e.currentTarget.parentElement.nextElementSibling;
+   popover.classList.toggle("display_none");
+    });
     });
   };
 };
