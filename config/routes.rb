@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :daily_statuses, only: [ :index, :new, :create, :update, :update_all ]
 
-  resources :events, only: [ :index, :new, :create ] do
+  resources :events, only: [ :index, :new, :create, :destroy, :update ] do
     member do
       patch :approve
       patch :decline
