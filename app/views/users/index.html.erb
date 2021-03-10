@@ -10,7 +10,7 @@
               <% end %>
                <button type="button" class="btn toggle_popover"> + </button>
             </div>
-            <%= render :partial => 'popover', locals: { berlin_office: @berlin_office }%>
+            <%= render :partial => 'popover', locals: { location: @berlin_office }%>
         </div>
           <div class="card-trip-infoss">
             <div>
@@ -22,7 +22,9 @@
                 <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar",data:{toggle:"tooltip", placement:"top"}, title: user.full_name %>
                 <% end %>
               <% end %>
+              <button type="button" class="btn toggle_popover"> + </button>
           </div>
+          <%= render :partial => 'popover', locals: { location: @home_office }%>
         </div>
           <div class="card-trip-infoss">
             <div>
@@ -32,7 +34,7 @@
               <%  end %>
               <button type="button" class="btn toggle_popover"> + </button>
             </div>
-            <%= render :partial => 'popover_kölln', locals: { kölln_office: @kölln_office }%>
+            <%= render :partial => 'popover', locals: { location: @kölln_office }%>
         </div>
           <div class="card-trip-infoss">
             <div>
@@ -42,7 +44,7 @@
               <%  end %>
               <button type="button" class="btn toggle_popover"> + </button>
           </div>
-            <%= render :partial => 'popover_holiday', locals: { holiday: @holiday }%>
+            <%= render :partial => 'popover', locals: { location: @holiday }%>
         </div>
 
           <div class="card-trip-infoss">
@@ -51,15 +53,17 @@
               <% @business_trip.take(5).each do |user| %>
               <%= cl_image_tag user.photo.key, width: 40, height: 40, crop: :fill, class: "avatar", data:{toggle:"tooltip", placement:"top"}, title: user.full_name  %>
               <% end %>
+              <button type="button" class="btn toggle_popover"> + </button>
           </div>
+             <%= render :partial => 'popover', locals: { location: @business_trip }%>
         </div>
       </div>
     </div>
 </div>
 
+<p class="date text-" style="position: absolute"><%= Date.today.strftime("%A, %d %b %Y") %></p>
 <div class="menu-right menu col-sm-3 col-xl-2">
   <div class="notification-content">
-    <%= Date.today.strftime("%d %B %Y") %>
     <p><strong>Goals for today</strong></p>
   </div>
 </div>
