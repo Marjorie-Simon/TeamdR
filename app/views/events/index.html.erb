@@ -49,7 +49,8 @@
                 <p><%= event.content %></p>
               </div>
               <div class="notification-actions">
-                <!--   <%#= link_to "Edit", edit_event_path(event), method: : %> -->
+                <%= link_to "Edit", edit_event_path(event), method: :get %>
+                <%= link_to "Delete", event_path(event), method: :delete %>
                 <%#= link_to "✉️",  %>
               </div>
             <% end %>
@@ -60,8 +61,10 @@
       </div>
   </div>
 </div>
-
+<p class="date text-" style="position: absolute"><%= Date.today.strftime("%A, %d %b %Y") %></p>
 <div class="menu-right menu col-sm-3 col-xl-2">
+
+  <h6>Invite your colleagues:</h6>
   <!-- event form -->
   <div class="box">
     <%= render 'new' %>
