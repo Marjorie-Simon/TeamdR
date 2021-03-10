@@ -9,34 +9,29 @@
   <div class="graph-box col-12">
     <br>
     <h6>💻 Berlin office</h6>
-    <%= area_chart @berlin_office, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#81b61f"] %>
+    <%= area_chart @berlin_office, defer: true, xmin: @start_date, xmax: @end_date, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#81b61f"] %>
 
     <br>
     <h6>🏠 Berlin home office</h6>
-    <%= area_chart @home_office, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#4e6e13"] %>
+    <%= area_chart @home_office, defer: true, xmin: @start_date, xmax: @end_date, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#4e6e13"] %>
 
     <br>
-    <h6>🏦 Köln office</h6>
-    <%= area_chart @köln_office, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#1a4b5d"] %>
+    <h6>⛪️ Köln office</h6>
+    <%= area_chart @köln_office, defer: true, xmin: @start_date, xmax: @end_date, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#1a4b5d"] %>
 
     <br>
     <h6>✈ Business trip</h6>
-    <%= area_chart @business_trip, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"} %>
+    <%= area_chart @business_trip, defer: true, xmin: @start_date, xmax: @end_date, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"} %>
 
     <br>
     <h6>🌴 Vacation</h6>
-    <%= area_chart @vacation, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#6e6c13"] %>
+    <%= area_chart @vacation, defer: true, xmin: @start_date, xmax: @end_date, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#6e6c13"] %>
 
     <br>
     <h6>🤒 Sick leave</h6>
-    <%= area_chart @sick_leave, defer: true, xmin: Date.today, xmax: Date.today + 7, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#d34185"] %>
+    <%= area_chart @sick_leave, defer: true, xmin: @start_date, xmax: @end_date, width: "", height: "300px", xtitle: "Date", ytitle: "Nr. of employees", messages: {empty: "No data"}, colors: ["#d34185"] %>
   </div>
 
-
-  <div class="centered-box">
-
-
-  </div>
 </div>
 <p class="date text-" style="position: absolute"><%= Date.today.strftime("%A, %d %b %Y") %></p>
 
@@ -44,20 +39,26 @@
   <div class="notification-content">
     <div class="dashboard-right-box">
 
-    <!--   <div>
-        <a href="#" class="btn btn-medium gray">events</a>
-      </div>
-      <div>
-        <a href="#" class="btn btn-medium gray">attendance</a>
-      </div>
- -->
-
       <fieldset class="fieldset field-happiness">
         <h6 class="text-center">Employee Happiness</h6>
           <%= bar_chart @employee_happiness, defer: true, ytitle: "😄      😐      😩", height: "200px", messages: {empty: "No data"}, colors: ["#81b61f"] %>
         <p class="text-center">votes</p>
       </fieldset>
 
+      <br>
+      <div class="graphfilter">
+        <div>
+          <%= simple_form_for :timeframe, url: dashboard_path, method: :get do |f| %>
+            <%#= f.label :startdate, "Starting date" %>
+            <%#= f.date_field :startdate %>
+            <%= f.input :start_date, as: :date, label: "Sarting date", html5: true %>
+            <%#= f.label :enddate, "Ending date" %>
+            <%#= f.date_field :enddate %>
+            <%= f.input :end_date, as: :date, label: "Ending date", html5: true %>
+            <%= f.submit "Submit", disable_with: 'Submiting...' %>
+          <% end %>
+        </div>
+      </div>
 
 
       <%# <fieldset class="fieldset field-happiness">
