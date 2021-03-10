@@ -10,7 +10,10 @@
 }
 
 .day-goal {
-
+  font-family: "Josefin Sans", "sans-serif";
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
 
 #goal {
@@ -27,15 +30,22 @@ hr.rounded {
 
 
 .simple-calendar {
-  .header{
-    text-align: center;
-  }
+
   .day {
     color: $pink;
     font-weight: bold;
     font-size: 12px;
     text-align: center;
   }
+
+  .today {
+    background: #D8F47D !important;
+  }
+
+.table thead th {
+  text-align: center !important;
+  }
+
 
   .wday-0 {}
   .wday-1 {}
@@ -57,3 +67,6 @@ hr.rounded {
 
   .has-events {}
 }
+
+
+
