@@ -2,7 +2,10 @@
   background-color: $light-blue;
   width: 25%;
   // border-radius: 4px;
-  height: 100vh;
+  min-height: 100vh;
+  // position: sticky;
+  // top: 0;
+  padding-top: 7%;
 }
 
 .menu-left {
@@ -16,14 +19,20 @@
 
 .menu-left ul {
   list-style-type: none;
-  padding: 20px;
+  // padding: 20px;
   align-items: center;
-  line-height: 250%;
+  // line-height: 300%;
 }
+
+.menu-left li {
+  margin-bottom: 1.5rem;
+}
+
 
 .menu-item {
   color: $black;
   text-decoration: none;
+  padding-top: 7%;
 }
 
 .menu-item:hover {
@@ -31,9 +40,18 @@
   color: $pink;
 }
 
-// .menu-right {
+.menu-item.active {
+  color: $pink;
+  font-weight: 500;
+}
 
-// }
+.date {
+  font-size: 14px;
+  text-align: right;
+  color: $logo-blue;
+  font-weight: 500;
+  padding: 10px 0px 0px 10px;
+}
 
 *:focus {
   outline:none !important

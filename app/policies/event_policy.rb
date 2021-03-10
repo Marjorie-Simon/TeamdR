@@ -24,4 +24,12 @@ class EventPolicy < ApplicationPolicy
   def decline?
     true
   end
+
+  def update?
+    user ==  record.user
+  end
+
+  def destroy?
+    user ==  record.user
+  end
 end
