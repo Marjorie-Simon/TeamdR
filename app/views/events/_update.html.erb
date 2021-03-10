@@ -1,0 +1,8 @@
+
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+<%= f.submit %>
+<% end %>
