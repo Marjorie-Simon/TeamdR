@@ -64,9 +64,9 @@ daily_status_seed_json['feed']['entry'].each_with_index do |seed, index|
   )
   rating.save!
 end
-20.times do
+30.times do
   rating = Rating.new(
-    value_stars: rand(3..5),
+    value_stars: rand(4..5),
     daily_status: DailyStatus.all.sample
   )
   rating.save!
