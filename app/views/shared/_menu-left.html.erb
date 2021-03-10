@@ -20,6 +20,8 @@
       </li>
     <% end %>
   </ul>
+  <% if user_signed_in? %>
+    <% unless current_user.todaysgoal.empty? %>
   <div class="card-goal">
     <div>
       <h5>Today I will:</h5>
@@ -29,4 +31,6 @@
       <p>Let's make it happen 🏋️‍♀️!</p>
     </div>
   </div>
+  <% end %>
+  <% end %>
 </div>
