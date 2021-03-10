@@ -12,7 +12,16 @@
   // justify-content: center;
  }
 
-
+.menu-left .card-goal {
+  height: 150px;
+  padding-top: 20px;
+  padding-bottom: 15px;
+  justify-content: center;
+  border-radius: 8px;
+  text-align: center;
+  background-color: $white;
+  color: $pink;
+}
 
 .menu-left ul {
   list-style-type: none;
