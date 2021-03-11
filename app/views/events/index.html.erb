@@ -4,33 +4,33 @@
   <!-- events -->
   <div class="centered-box card-box">
     <h3 class="text-center">you've got some invitations</h3>
-      <div class="notifications-grid">
-
-          <% unless current_user.events_as_invitee.empty? %>
-            <% current_user.events_as_invitee.each do |event| %>
-            <div class="notification">
-            <!-- this image tag works now! don't commet it out -->
-              <% if event.user.photo.attached? %>
-                <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
-              <% end %>
-              <div class="notification-content">
-                <h6><%= event.user.full_name %></h6>
-                <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <br> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
-                <p><strong> <%= event.title %></strong> </p>
-                <p> <%= event.content %></p>
-              </div>
-
-              <div class="notification-actions">
-                <%= link_to "Decline", event_path(event), method: :delete %>
-                <%= link_to "Join", approve_event_path(event), method: :patch %>
-                <%#= link_to "✉️",  %>
-              </div>
+    <div class="notifications-grid">
+      <% unless current_user.events_as_invitee.empty? %>
+        <% current_user.events_as_invitee.each do |event| %>
+          <div class="notification">
+          <!-- this image tag works now! don't commet it out -->
+            <% if event.user.photo.attached? %>
+              <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
             <% end %>
+            <div class="notification-content">
+              <h6><%= event.user.full_name %></h6>
+              <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
+              <p><strong> <%= event.title %></strong> </p>
+              <p> <%= event.content %></p>
+            </div>
 
+            <div class="notification-actions">
+              <%= link_to "Decline", event_path(event), method: :delete %>
+              <%= link_to "Join", approve_event_path(event), method: :patch %>
+              <%#= link_to "✉️",  %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <div>
+          <p>I will get an invitation soon.</p>
         </div>
-        <% else %>
-              <p>I will get an invitation soon.</p>
-          <% end %>
+      <% end %>
     </div>
   </div>
 
@@ -69,11 +69,14 @@
   </div>
 </div>
 
+
 <div class="menu-right menu col-sm-3 col-xl-2">
   <div>
     <h3 class="date text- weather" style=""><%= Date.today.strftime("%A, %d %b %Y") %> <div class="text-center"> ☔️ </div> </h3>
   </div>
-  <h6>Invite your colleagues:</h6>
+
+  <h6 class="text-center">Invite your colleagues:</h6>
+
   <!-- event form -->
   <div class="box">
     <%= render 'new' %>
