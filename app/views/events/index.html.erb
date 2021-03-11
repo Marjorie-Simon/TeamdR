@@ -13,10 +13,14 @@
               <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
             <% end %>
             <div class="notification-content">
-              <h6><%= event.user.full_name %></h6>
-              <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
-              <p><strong> <%= event.title %></strong> </p>
-              <p> <%= event.content %></p>
+              <div>
+                <h6><%= event.user.full_name %></h6>
+                <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
+              </div>
+              <div>
+                <p><strong><%= event.title %></strong> </p>
+                <p> <%= event.content %></p>
+              </div>
             </div>
 
             <div class="notification-actions">
