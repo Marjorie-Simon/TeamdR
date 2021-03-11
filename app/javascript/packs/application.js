@@ -57,6 +57,7 @@ import { togglePopover} from "../components/toggle_popover";
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   initFlatpickr();
+  initFlatpickrDaschboard();
   initPopover();
   initTooltip();
   // initSelect2();

@@ -54,10 +54,10 @@
           <%= simple_form_for :timeframe, url: dashboard_path, method: :get do |f| %>
             <%#= f.label :startdate, "Starting date" %>
             <%#= f.date_field :startdate %>
-            <%= f.input :start_date, as: :date, label: "Start Date", html5: true %>
+            <%= f.input :start_date, as: :date, label: "Start Date", html5: true, input_html: {class: "graphdatepicker"} %>
             <%#= f.label :enddate, "Ending date" %>
             <%#= f.date_field :enddate %>
-            <%= f.input :end_date, as: :date, label: "End Date", html5: true %>
+            <%= f.input :end_date, as: :date, label: "End Date", html5: true, input_html: {class: "graphdatepicker"} %>
             <%= f.submit "Submit", disable_with: 'Submiting...' %>
           <% end %>
         </div>
