@@ -74,3 +74,23 @@ h6 {
 .form-group.date.required.timeframe_end_date {
   padding: 0px;
 }
+
+#timeframe_start_date {
+  padding: 0 10px 0 0;
+  border-radius: 8px;
+}
+
+#timeframe_end_date {
+  padding: 0 10px 0 0;
+  border-radius: 8px;
+}
+
+.form-group.date.required.timeframe_start_date > label {
+  margin-bottom: 0;
+  color: $medium-gray;
+}
+
+.form-group.date.required.timeframe_end_date > label {
+  margin-bottom: 0;
+  color: $medium-gray;
+}
