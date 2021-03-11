@@ -1,12 +1,12 @@
 <h6 class="text-center">Todays Events</h6>
-<% unless current_user.events_as_invitee.empty? && current_user.evetns_as.invitee.start_time != Date.today  %>
+<% unless current_user.events_as_invitee.empty? %>
   <% current_user.events_as_invitee.each do |event| %>
     <div class="latest-events">
     <!-- this image tag works now! don't commet it out -->
       <div>
       <p><strong><%= event.user.full_name %></strong></p>
       <% if event.user.photo.attached? %>
-        <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill class: "avatar-middle" %>
+        <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-middle" %>
       <% end %>
       </div>
       <div>
