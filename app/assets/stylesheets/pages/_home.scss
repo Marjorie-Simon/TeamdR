@@ -14,12 +14,32 @@
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+
+  .edit_daily_status {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .form-control {
+    width: 240px;
+  }
 }
+
+
+
+.daily_status_daily_goal {
+  margin-bottom: 0;
+}
+
+
 
 #goal {
   input{
   color: $pink;
   font-weight: bold;
+  width: 240px;
 }
 }
 
