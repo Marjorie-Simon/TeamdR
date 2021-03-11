@@ -46,7 +46,7 @@ puts "creating Daily Statuses"
 daily_status_url = "https://spreadsheets.google.com/feeds/list/1s_Htg5phe-1fTjDsfsxWpPlyYcAjgOMmGzy2UQ1Ilrs/1/public/full?alt=json"
 daily_status_seed_url = open(daily_status_url).read
 daily_status_seed_json = JSON.parse(daily_status_seed_url)
-
+daily_statuses = []
 daily_status_seed_json['feed']['entry'].each_with_index do |seed, index|
   daily_status= DailyStatus.new(
     title: seed['gsx$title']['$t'],
@@ -56,21 +56,55 @@ daily_status_seed_json['feed']['entry'].each_with_index do |seed, index|
     )
   daily_status.save!
   puts "daily status #{index} created"
+  daily_statuses << daily_status
+end
+# 100.times do
+#   rating = Rating.new(
+#     value_stars: rand(4..5),
+#     daily_status: DailyStatus.all.sample
+#   )
+#   rating.save!
+# end
+ puts "Creating ratings..."
+  26.times do
+    rating = Rating.new(
+      value_stars: 5,
+      daily_status_id: daily_statuses.sample.id
+    )
+    rating.save!
+  end
 
-  puts "Creating ratings..."
-  rating = Rating.new(
-    value_stars: rand(1..5),
-    daily_status_id: daily_status.id
-  )
-  rating.save!
-end
-100.times do
-  rating = Rating.new(
-    value_stars: rand(4..5),
-    daily_status: DailyStatus.all.sample
-  )
-  rating.save!
-end
+  13.times do
+    rating = Rating.new(
+      value_stars: 4,
+      daily_status_id: daily_statuses.sample.id
+    )
+    rating.save!
+  end
+
+   6.times do
+    rating = Rating.new(
+      value_stars: 3,
+      daily_status_id: daily_statuses.sample.id
+    )
+    rating.save!
+  end
+
+   3.times do
+    rating = Rating.new(
+      value_stars: 2,
+      daily_status_id: daily_statuses.sample.id
+    )
+    rating.save!
+  end
+
+   2.times do
+    rating = Rating.new(
+      value_stars: 1,
+      daily_status_id: daily_statuses.sample.id
+    )
+    rating.save!
+  end
 
 puts "Ratings created!!"
 puts "Successfully created daily statuses. Nailed it YEAH!"
