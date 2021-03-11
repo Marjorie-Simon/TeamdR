@@ -1,7 +1,8 @@
-<a style="display:block" href="http://www.teamdr.digital/events">
+<div class="todays-events">
   <h6 class="text-center">Todays Events</h6>
   <% unless current_user.events_as_invitee.empty? %>
     <% current_user.events_as_invitee.each do |event| %>
+      <a style="display:block" href="http://www.teamdr.digital/events">
       <div class="latest-events">
       <!-- this image tag works now! don't commet it out -->
         <div>
@@ -21,4 +22,5 @@
   <% else %>
     <p>I will get an invitation soon.</p>
   <% end %>
-</a>
+  </a>
+</div>
