@@ -3,7 +3,7 @@
 
   <!-- events -->
   <div class="centered-box card-box">
-    <h3 class="text-center">you've got some invitations</h3>
+    <h3 class="text-center">Incoming invitations</h3>
     <div class="notifications-grid">
       <% unless current_user.events_as_invitee.empty? %>
         <% current_user.events_as_invitee.each do |event| %>
@@ -27,15 +27,17 @@
           </div>
         <% end %>
       <% else %>
-        <div>
-          <p>I will get an invitation soon.</p>
+
+        <div class="notification">
+          <p>Waiting for the first invite 📭</p>
+
         </div>
       <% end %>
     </div>
   </div>
 
   <div class="centered-box card-box">
-    <h3 class="text-center">your sent invitations</h3>
+    <h3 class="text-center">Sent invitations</h3>
 
       <div class="notifications-grid">
         <% unless current_user.events.empty? %>
@@ -62,7 +64,7 @@
           <% end %>
         <% else %>
         <div class="notification">
-          <p>You didn't write an invitation yet.</p>
+          <p>Waiting for you to write your first invite 📬</p>
         </div>
       <% end %>
     </div>

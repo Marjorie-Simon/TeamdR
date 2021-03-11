@@ -18,9 +18,51 @@
           <a class="dropdown-item" href="#">🔍 Find my colleagues</a> -->
           <%# <br> %>
           <a class="dropdown-item" href="#">Settings</a>
+           <% if params[:date] %>
+           <div class="dropdown-item" id="modal-btn" href="#">Rate your day</div>
+            <% end %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
         </div>
       </li>
     </ul>
   </div>
 </div>
+
+<div class="backdrop"></div>
+
+<!-- Modal -->
+<div class="modal">
+  <span class="close-btn">&times;</span>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <% if current_user && params[:date] %>
+      <p>How was your day <%= current_user.first_name %> ?</p>
+        <div class="rating-stars-container">
+          <div class="rating-stars d-flex">
+              <%= link_to ratings_path(@rating, value_stars: 1, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+               <%= link_to ratings_path(@rating, value_stars: 2, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+              <%= link_to ratings_path(@rating, value_stars: 3, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+               <%= link_to ratings_path(@rating, value_stars: 4, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+               <%= link_to ratings_path(@rating, value_stars: 5, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+            <!-- <i class="rating-star fa fa-star-o" data-rating="2"></i>
+            <i class="rating-star fa fa-star-o" data-rating="3"></i>
+            <i class="rating-star fa fa-star-o" data-rating="4"></i>
+            <i class="rating-star fa fa-star-o" data-rating="5"></i> -->
+          </div>
+        </div>
+        <% end %>
+    </div>
+  </div>
+</div>
+
