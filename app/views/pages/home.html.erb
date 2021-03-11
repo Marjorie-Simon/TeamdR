@@ -7,14 +7,13 @@
 
 
     <% if @daily_status %>
-
+      <h6><strong>What is your main goal for today?</strong></h6>
       <div class="day-goal">
-        <hr class="rounded">
+      <hr class="rounded">
         <%= simple_form_for(@daily_status) do |f| %>
-        <%= f.input :daily_goal, label: 'What is your main goal for today?', selected: @daily_status.daily_goal %>
-        <%= f.submit "Set goal 🎯!" %>
+          <%= f.input :daily_goal, label: false, selected: @daily_status.daily_goal %>
+          <%= f.submit "Set goal 🎯!" %>
         <% end %>
-
       </div>
     <% end %>
   </div>
