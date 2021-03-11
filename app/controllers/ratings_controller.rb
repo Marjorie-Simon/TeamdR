@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
     authorize rating
     p rating
     if rating.save
-      redirect_to root_path(date: daily_status.date), notice: "Thanks #{current_user.first_name}, see you tomorrow 🎉"
+      redirect_to root_path(date: daily_status.date), notice: "Thanks #{current_user.first_name}, have a nice evening 🎉"
     else
       render :index
     end

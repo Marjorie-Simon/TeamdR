@@ -17,4 +17,29 @@ margin-bottom: 15px;
   padding: 5px;
   margin: 5px;
   background-color: #B6CADD;
+
+
+}
+
+.todays-events {
+
+
+  a {
+    color: $black !important;
+
+  }
+}
+
+.main-container > .menu-right.menu.col-sm-3.col-xl-2 > .menu-cards > a > p {
+  color: $black !important;
+  font-weight: 300!important;
+}
+
+
+.menu-cards {
+  a {
+    p {
+      color: $black !important;
+    }
+  }
 }
