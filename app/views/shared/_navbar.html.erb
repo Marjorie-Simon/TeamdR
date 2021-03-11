@@ -29,12 +29,13 @@
   </div>
 </div>
 
+<div class="backdrop"></div>
 
 <!-- Modal -->
 <div class="modal">
+  <span class="close-btn">&times;</span>
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-      <span class="close-btn">&times;</span>
       <% if current_user && params[:date] %>
       <p>How was your day <%= current_user.first_name %> ?</p>
         <div class="rating-stars-container">
