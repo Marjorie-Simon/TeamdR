@@ -63,6 +63,7 @@
 
 <p class="date text-" style="position: absolute"><%= Date.today.strftime("%A, %d %b %Y") %></p>
 <div class="menu-right menu col-sm-3 col-xl-2">
-  <div class="notification-content">
+  <div class="menu-cards">
+    <%= render 'events/latest-events' %>
   </div>
 </div>
