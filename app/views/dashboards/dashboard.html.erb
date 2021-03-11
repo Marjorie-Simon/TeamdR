@@ -2,7 +2,7 @@
 
   <div class="dashboard-top-content">
     <div class="home-greeting">
-      <h1 class="text-center">Hi, I'm your dashboard</h1>
+      <h1 class="text-center mt-3 mb-4">Hi, I'm your dashboard</h1>
     </div>
   </div>
 
@@ -33,10 +33,12 @@
   </div>
 
 </div>
-<p class="date text-" style="position: absolute"><%= Date.today.strftime("%A, %d %b %Y") %></p>
 
 <div class="menu-right menu col-sm-3 col-xl-2">
   <div class="notification-content">
+  <div>
+    <h3 class="date text- weather" style=""><%= Date.today.strftime("%A, %d %b %Y") %> <div class="text-center"> ☔️ </div> </h3>
+  </div>
     <div class="dashboard-right-box">
 
       <fieldset class="fieldset field-happiness">
