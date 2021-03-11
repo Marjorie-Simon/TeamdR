@@ -6,7 +6,7 @@
       <div>
       <p><strong><%= event.user.full_name %></strong></p>
       <% if event.user.photo.attached? %>
-        <%= cl_image_tag event.user.photo.key, class: "avatar-middle" %>
+        <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill class: "avatar-middle" %>
       <% end %>
       </div>
       <div>
