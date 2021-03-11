@@ -65,19 +65,23 @@ document.addEventListener('turbolinks:load', () => {
 let modalBtn = document.getElementById("modal-btn")
 let modal = document.querySelector(".modal")
 let closeBtn = document.querySelector(".close-btn")
+let backDrop = document.querySelector(".backdrop")
 if (modalBtn && modal) {
 modalBtn.onclick = function(){
   modal.style.display = "block"
+  backDrop.style.display = "block"
 }
 }
-  if(closBtn && modal) {
+  if(closeBtn && modal) {
 closeBtn.onclick = function(){
   modal.style.display = "none"
+  backDrop.style.display = "none"
 }
 }
 window.onclick = function(e){
   if(e.target == modal){
     modal.style.display = "none"
+    backDrop.style.display = "none"
   }
 }
 
