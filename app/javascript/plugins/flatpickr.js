@@ -8,16 +8,15 @@ const initFlatpickr = () => {
     maxTime: "21:00",
     defaultDate: "today",
   });
+};
+
+const initFlatpickrDaschboard = () => {
   flatpickr(".graphdatepicker", {
-    enableTime: false,
-    dateFormat: "H:i",
-    minTime: "09:00",
-    maxTime: "21:00",
-    defaultDate: "today",
+    defaultDate: "today"
   });
 };
 
-export { initFlatpickr };
+export { initFlatpickr, initFlatpickrDaschboard };
 
 // enableTime: true,
 //     noCalendar: true,
