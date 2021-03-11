@@ -1,5 +1,5 @@
 <div class="box col-6">
-  <h1 class="text-center">Events</h1>
+  <h1 class="text-center mt-3 mb-4">Events</h1>
 
   <!-- events -->
   <div class="centered-box card-box">
@@ -68,9 +68,11 @@
     </div>
   </div>
 </div>
-<p class="date text-" style="position: absolute"><%= Date.today.strftime("%A, %d %b %Y") %></p>
-<div class="menu-right menu col-sm-3 col-xl-2">
 
+<div class="menu-right menu col-sm-3 col-xl-2">
+  <div>
+    <h3 class="date text- weather" style=""><%= Date.today.strftime("%A, %d %b %Y") %> <div class="text-center"> ☔️ </div> </h3>
+  </div>
   <h6>Invite your colleagues:</h6>
   <!-- event form -->
   <div class="box">
