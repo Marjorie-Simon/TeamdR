@@ -19,7 +19,7 @@
           <%# <br> %>
           <a class="dropdown-item" href="#">Settings</a>
            <% if params[:date] %>
-              <div class="dropdown-item" id="modal-btn" href="#">Rate your day</div>
+           <div class="dropdown-item" id="modal-btn" href="#">Rate your day</div>
             <% end %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
 
@@ -43,6 +43,15 @@
               <i class="rating-star fas fa-star"></i>
               <% end %>
                <%= link_to ratings_path(@rating, value_stars: 2, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+              <%= link_to ratings_path(@rating, value_stars: 3, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+               <%= link_to ratings_path(@rating, value_stars: 4, daily_status_id: @daily_status.id), method: :post, remote: true do %>
+              <i class="rating-star fas fa-star"></i>
+              <% end %>
+               <%= link_to ratings_path(@rating, value_stars: 5, daily_status_id: @daily_status.id), method: :post, remote: true do %>
               <i class="rating-star fas fa-star"></i>
               <% end %>
             <!-- <i class="rating-star fa fa-star-o" data-rating="2"></i>

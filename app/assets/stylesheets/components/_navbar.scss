@@ -10,6 +10,7 @@
 .dropdown-menu {
   box-shadow: 0 0 50px -15px $gray;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .navbar {
@@ -48,6 +49,16 @@
   animation-duration: 0.4;
   border-radius: 10px;
 }
+
+.rating-star{
+  color: #FFEC54;
+}
+.rating-star:hover {
+transition: 0.3s all;
+ text-shadow: 0px 2px 0 #000, 0 -1px 0
+
+}
+
 .close-btn {
   float: right;
   color: lightgray;
@@ -66,8 +77,4 @@
   to {top:0; opacity:1}
 }
 
-#modal-btn {
-  margin-top: 15px;
-  background-color: $logo-blue;
-  border-radius: 10px;
-}
+
