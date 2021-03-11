@@ -5,10 +5,6 @@
   align-items: center;
 }
 
-.home-greeting {
-
-}
-
 .day-goal {
   font-family: "Josefin Sans", "sans-serif";
   font-size: 16px;
@@ -31,6 +27,7 @@
   padding-right: 0px;
   margin-right: 12px;
   width: 220px;
+}
 #daily_status_title {
   border-radius: 8px;
 }
@@ -46,7 +43,7 @@
   color: $pink;
   font-weight: bold;
   width: 240px;
-}
+  }
 }
 
 hr.rounded {
@@ -87,31 +84,7 @@ margin-bottom: 15px;
     background: #D8F47D !important;
   }
 
-.table thead th {
-  text-align: center !important;
+  .table thead th {
+    text-align: center !important;
   }
-
-
-  .wday-0 {}
-  .wday-1 {}
-  .wday-2 {}
-  .wday-3 {}
-  .wday-4 {}
-  .wday-5 {}
-  .wday-6 {}
-
-  .today {}
-  .past {}
-  .future {}
-
-  .start-date {}
-
-  .prev-month {}
-  .next-month { }
-  .current-month {}
-
-  .has-events {}
 }
-
-
-

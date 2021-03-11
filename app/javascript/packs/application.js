@@ -45,7 +45,7 @@ document.addEventListener("turbolinks:before-render", function() {
 
 // External imports
 import "bootstrap";
-import { initFlatpickr } from "../plugins/flatpickr";
+import { initFlatpickr, initFlatpickrDaschboard } from "../plugins/flatpickr";
 import { initPopover } from "../plugins/init_popover";
 import { initTooltip } from "../plugins/tooltip";
 import { togglePopover} from "../components/toggle_popover";
