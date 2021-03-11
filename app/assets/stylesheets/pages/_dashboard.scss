@@ -1,4 +1,4 @@
-.dashboard-right-box {
+/* .dashboard-right-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,4 +9,88 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+} */
+
+.graphfilter {
+  display: flex;
+  justify-content: center;
+}
+
+.form-group.date.required.timeframe_start_date {
+ text-align: center;
+ font-family: "Josefin Sans", "sans-serif";
+  label {
+    color: black;
+  }
+}
+
+.form-group.date.required.timeframe_end_date {
+  text-align: center;
+  font-family: "Josefin Sans", "sans-serif";
+  label {
+    color: black;
+  }
+}
+
+input[type=submit] {
+  color: $pink;
+  border-color: $logo-blue;
+  border-width: 1px;
+  border-style: ridge;
+}
+
+#timeframe_start_date {
+  color: $light-blue;
+}
+
+#timeframe_end_date {
+  color: $light-blue;
+}
+
+.form-group.date.required.timeframe_start_date > label > abbr {
+  display: none;
+}
+
+.form-group.date.required.timeframe_end_date > label > abbr {
+  display: none;
+}
+
+input[type="date" i] {
+  padding-inline-start: 1px;
+}
+
+div > form {
+  padding-bottom: 25px;
+}
+
+h6 {
+  padding-top: 25px;
+}
+
+.form-group.date.required.timeframe_start_date {
+  padding: 0px;
+}
+
+.form-group.date.required.timeframe_end_date {
+  padding: 0px;
+}
+
+#timeframe_start_date {
+  padding: 0 10px 0 0;
+  border-radius: 8px;
+}
+
+#timeframe_end_date {
+  padding: 0 10px 0 0;
+  border-radius: 8px;
+}
+
+.form-group.date.required.timeframe_start_date > label {
+  margin-bottom: 0;
+  color: $medium-gray;
+}
+
+.form-group.date.required.timeframe_end_date > label {
+  margin-bottom: 0;
+  color: $medium-gray;
 }
