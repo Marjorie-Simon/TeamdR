@@ -9,25 +9,24 @@
         <% current_user.events_as_invitee.each do |event| %>
           <div class="notification">
           <!-- this image tag works now! don't commet it out -->
-            <% if event.user.photo.attached? %>
-              <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
-            <% end %>
-            <div class="notification-content">
-              <div>
-                <h6><%= event.user.full_name %></h6>
-                <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
+              <div class="notification-left">
+                <div class="notification-info">
+                  <h6><%= event.user.full_name %></h6>
+                  <% if event.user.photo.attached? %>
+                    <%= cl_image_tag event.user.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
+                  <% end %>
+                </div>
+                <div>
+                  <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
+                  <p><strong><%= event.title %></strong> </p>
+                  <p> <%= event.content %></p>
+                </div>
               </div>
-              <div>
-                <p><strong><%= event.title %></strong> </p>
-                <p> <%= event.content %></p>
+              <div class="notification-actions">
+                <%= link_to "Decline", event_path(event), method: :delete %>
+                <%= link_to "Join", approve_event_path(event), method: :patch %>
+                <%#= link_to "✉️",  %>
               </div>
-            </div>
-
-            <div class="notification-actions">
-              <%= link_to "Decline", event_path(event), method: :delete %>
-              <%= link_to "Join", approve_event_path(event), method: :patch %>
-              <%#= link_to "✉️",  %>
-            </div>
           </div>
         <% end %>
       <% else %>
@@ -48,22 +47,25 @@
           <% current_user.events.each do |event| %>
             <!-- this image tag works now! don't commet it out -->
             <div class="notification">
-            <% if event.user.photo.attached? %>
-              <%= cl_image_tag event.invitee.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
-            <% end %>
+              <div class="notification-left">
+                <div class="notification-info">
+                  <h6> <%= event.invitee.full_name %></h6>
+                  <% if event.user.photo.attached? %>
+                    <%= cl_image_tag event.invitee.photo.key, width: 60, height: 60, crop: :fill, class: "avatar-large" %>
+                  <% end %>
+                </div>
 
-            <div class="notification-content">
-              <h6> <%= event.invitee.full_name %></h6>
-              <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <br> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
-              <p> <strong><%= event.title %></strong></p>
-              <p><%= event.content %></p>
-            </div>
-
-            <div class="notification-actions">
-              <%#= link_to "Edit", edit_event_path(event), method: :get, type: "button", data: {container="body", toggle="popover", placement="bottom"} %>
-              <%= link_to "Delete", event_path(event), method: :delete %>
-              <%#= link_to "✉️",  %>
-            </div>
+                <div>
+                  <p><small><%= event.start_time.strftime("%H:%M")%> - <%= event.end_time.strftime("%H:%M") %> <br> <%= event.start_time.strftime("%d/%m/%Y") %> </small></p>
+                  <p> <strong><%= event.title %></strong></p>
+                  <p><%= event.content %></p>
+                </div>
+              </div>
+              <div class="notification-actions">
+                <%#= link_to "Edit", edit_event_path(event), method: :get, type: "button", data: {container="body", toggle="popover", placement="bottom"} %>
+                <%= link_to "Delete", event_path(event), method: :delete %>
+                <%#= link_to "✉️",  %>
+              </div>
            </div>
           <% end %>
         <% else %>
