@@ -40,11 +40,13 @@ input[type=submit] {
 }
 
 #timeframe_start_date {
-  color: $light-blue;
+  color: $medium-gray;
+  padding: 0 10px 0 10px !important;
 }
 
 #timeframe_end_date {
-  color: $light-blue;
+  color: $medium-gray;
+  padding: 0 10px 0 10px !important;
 }
 
 .form-group.date.required.timeframe_start_date > label > abbr {
