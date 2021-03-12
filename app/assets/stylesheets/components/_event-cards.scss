@@ -8,23 +8,38 @@
 }
 
 .notification {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  background: white;
-  border: 1px solid $light-gray;
-  padding: 8px 16px;
-  margin-bottom: 8px;
-  height: 150px;
+    padding: 16px;
+    /* align-content: center; */
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    /* position: relative; */
+    overflow: hidden;
+    background: white;
+    border: 1px solid #F4F4F4;
+    padding: 8px 16px;
+    margin-bottom: 8px;
+    height: 150px;
 }
 
+.notification-left {
+  display: flex;
+}
+
+.notification-info {
+  padding: 5px;
+  margin-right: 90px;
+  h6 {
+    padding-top: 0;
+  }
+}
 
 .notification .notification-content {
   flex-grow: 1;
-  padding: 0 24px;
+  padding: 5px;
+  display: flex;
+  // align-items: center;
+
 }
 
 .notification p {
